@@ -4,6 +4,12 @@ import { Box, Flex } from "rebass/styled-components"
 
 import SocialIcon from "./social-icon"
 
+const SocialIconContainer = ({ network, url }) => (
+  <Box px={[3, 2]} key={network}>
+    <SocialIcon networkName={network} networkUrl={url} />
+  </Box>
+)
+
 /**
  * Shows a bunch of social links
  */
@@ -23,15 +29,15 @@ const Social = () => {
     }
   `)
 
-  const { profiles: socialProfiles, email } = dataJson.basics
-  const profiles = [
-    { network: "GMail", url: `mailto:${email}` },
-    ...socialProfiles,
-  ]
+  const { profiles, email } = dataJson.basics
 
   return (
     <>
       <Flex>
+        <Box pr={[3, 2]} key="GMail">
+          <SocialIcon networkName="GMail" networkUrl={`mailto:${email}`} />
+        </Box>
+
         {profiles.map(p => (
           <Box px={[3, 2]} key={p.network}>
             <SocialIcon networkName={p.network} networkUrl={p.url} />

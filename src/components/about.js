@@ -6,16 +6,6 @@ import styled from "styled-components"
  * Nested styles for the Markdown => HTML content
  */
 const MdHtmlContainer = styled.div`
-  > h1,
-  > h2,
-  > h3,
-  > h4,
-  > h5,
-  > h6 {
-    font-weight: 400;
-    font-style: normal;
-  }
-
   > p {
     max-width: 40em;
   }

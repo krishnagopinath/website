@@ -1,5 +1,3 @@
-# Hello, I'm Krishna ✌️
-
 I'm a **software engineer**, **budding teacher** and an **amateur photographer**.
 
 I enjoy building thoughtfully designed applications that solve problems in the simplest way possible.
