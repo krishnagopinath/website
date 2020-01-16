@@ -5,6 +5,7 @@ import Main from "../components/main"
 import Meta from "../components/meta"
 import About from "../components/about"
 import Social from "../components/social"
+import ResumeLink from "../components/resume-link"
 
 const IndexPage = () => (
   <Main>
@@ -14,6 +15,9 @@ const IndexPage = () => (
     </Box>
     <Box my={4}>
       <Social />
+    </Box>
+    <Box my={4}>
+      <ResumeLink />
     </Box>
   </Main>
 )
