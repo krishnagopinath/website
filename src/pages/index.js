@@ -1,21 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Box } from "rebass/styled-components"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Main from "../components/main"
+import Meta from "../components/meta"
+import About from "../components/about"
+import Social from "../components/social"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <Main>
+    <Meta title="Home" />
+    <Box px={[3, 2]}>
+      <About />
+    </Box>
+    <Box my={4}>
+      <Social />
+    </Box>
+  </Main>
 )
 
 export default IndexPage
