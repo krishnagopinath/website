@@ -22,14 +22,14 @@ const MdHtmlContainer = styled.div`
 
   & a,
   & a:visited {
-    color: #32cd32;
+    color: ${props => props.theme.colors.primary};
     transition: all 150ms linear 0s;
     padding: 2px;
 
     &:hover,
     &:focus,
     &:hover {
-      background-color: #32cd32;
+      background-color: ${props => props.theme.colors.primary};
       color: white;
     }
   }

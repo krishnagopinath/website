@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Box, Flex } from "rebass/styled-components"
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+
+import theme from "../utils/theme"
 
 /**
  * Global style block, to set up any global CSS.
@@ -26,15 +28,17 @@ const Main = ({ children }) => {
   return (
     <>
       <GlobalBodyStyles />
-      <Flex
-        flexDirection="row"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-      >
-        <Box fontSize={[2, 2, 3]} padding={3}>
-          <main>{children}</main>
-        </Box>
-      </Flex>
+      <ThemeProvider theme={theme}>
+        <Flex
+          flexDirection="row"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
+          <Box fontSize={[2, 2, 3]} padding={3}>
+            <main>{children}</main>
+          </Box>
+        </Flex>
+      </ThemeProvider>
     </>
   )
 }
