@@ -24,6 +24,8 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "husky": "^4.0.10",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -45,5 +47,16 @@
   },
   "bugs": {
     "url": "https://github.com/krishnagopinath/website/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
