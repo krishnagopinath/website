@@ -3,13 +3,14 @@
     "name": "Krishna Gopinath",
     "label": "Software engineer and (budding) teacher",
     "email": "hpkrishna07@gmail.com",
+    "phone": "(716) 431-9290",
     "website": "https://krishnagopinath.me",
     "summary": "",
     "profiles": [
       {
         "network": "Stackoverflow",
         "username": "krishgopinath",
-        "url": "https://stackoverflow.com/users/1217785/krishgopinath"
+        "url": "https://stackoverflow.com/u/1217785"
       },
       {
         "network": "GitHub",
@@ -45,18 +46,17 @@
       "startDate": "2017-03-27",
       "summary": "",
       "highlights": [
-        "Designed and built Pointman's Payment integration from scratch, from conception to production ready code. This involved scoping out requirements, writing a cordova plugin to interact with Mobile Payment SDKs, writing API wrapper libraries in Node.js, .NET platforms & integrating with multiple web and cordova apps.",
+        "Designed and built Pointman's Payment integration from scratch, which involved scoping out requirements, writing a cordova plugin to interact with Mobile Payment SDKs, writing API wrapper libraries in Node.js, .NET platforms & integrating with multiple web and cordova apps.",
         "Improved the team's ability to rapidly deliver new product features by replacing Pointman's legacy UI build process with a fast, standardized CLI process using Node.js and webpack. This also involved creating and running custom codemod scripts on Pointman's codebase for webpack compatibility, with jscodeshift.",
-        "Spearheaded the migration from AngularJS to Vue.js by creating a \"Vue base\" inside our AngularJS app and leading a 2 member team to migrate an existing feature into the Vue base. This improved developer productivity and paved the way to build new features in Vue.js, VueX and Vuetify.",
+        "Spearheaded the migration from AngularJS to Vue.js by creating a \"Vue base\" inside the app and leading a 2 member team to migrate an existing feature into the Vue base. This improved developer productivity and paved the way to build new features in Vue.js, VueX and Vuetify.",
         "Foster a mindset of learning and collaboration by mentoring new engineers, encouraging forward-thinking solutions that are more maintainable & scalable, performing in-depth code reviews and leading pair programming sessions.",
         "Automated deployment processes by setting up CI/CD pipelines for Pointman's Web, Mobile and API projects using Azure DevOps, which empowered the team to build & ship at a rapid pace.",
-        "Modernized Pointman's legacy application by systematically rewriting critical parts of it to be more resilient, faster & easier to maintain, resulting in a more stable user experience with reduced bugs.",
-        "Ran overnight releases every other week, which involved setting up deployment plans, running large scale DB migrations, coordinating with multiple teams and communicating efficiently.",
-        "Became proficient in context switching between multiple applications built on different stacks like CosmosDB - Node.js - AngularJS, SQL Server - ASP.NET - AngularJS/Vue.js."
+        "Modernized Pointman's legacy application by systematically rewriting critical parts of it to be more resilient, faster & easier to maintain, resulting in a more stable user experience with reduced bugs."
       ]
     },
     {
       "name": "Argyle Technology Group",
+      "location": "Buffalo, NY",
       "position": "Software Engineer Intern",
       "website": "https://www.argyletechnologygroup.com/",
       "startDate": "2016-05-15",
@@ -68,6 +68,7 @@
     },
     {
       "name": "Cognizant Technology Solutions",
+      "location": "India",
       "position": "Senior Software Developer",
       "website": "https://cognizant.com",
       "startDate": "2012-12-01",
@@ -81,13 +82,14 @@
     },
     {
       "name": "Cognizant Technology Solutions",
+      "location": "India",
       "position": "Software Developer",
       "website": "https://cognizant.com",
       "startDate": "2011-06-01",
       "endDate": "2012-11-30",
       "summary": "",
       "highlights": [
-        "Developed and maintained multiple desktop web apps that satisfied crucial organizational functions, such as Time-off Management and Payroll. Built with jQuery, AngularJS and .NET."
+        "Developed and maintained multiple web apps that satisfied crucial organizational functions, such as Time-off Management and Payroll. Built with jQuery, AngularJS and .NET."
       ]
     }
   ],
@@ -96,18 +98,18 @@
     {
       "institution": "University At Buffalo, SUNY",
       "area": "Computer Science",
-      "studyType": "Master of Science",
+      "studyType": "MS",
       "startDate": "2015-09-01",
       "endDate": "2017-02-01",
       "courses": ["Distributed Systems", "Programming Languages"]
     },
     {
       "institution": "Anna University",
-      "area": "Electronics and Communication Engineering",
-      "studyType": "Bachelor of Engineering",
+      "area": "Electrical Engineering",
+      "studyType": "BE",
       "startDate": "2007-09-10",
       "endDate": "2011-04-01",
-      "courses": []
+      "courses": ["Image Processing"]
     }
   ],
   "awards": [],
@@ -131,6 +133,7 @@
         "React.js",
         "Vue.js",
         "AngularJS",
+        "GatsbyJS",
         "Cordova",
         "Redux",
         "VueX",
@@ -156,12 +159,17 @@
     {
       "name": "[WIP] Matterwiki",
       "description": "A simple wiki for small teams, built with Node, React and PosgreSQL",
-      "url": "https://github.com/Matterwiki/Matterwiki/commits/refactor"
+      "url": "https://github.com/Matterwiki/Matterwiki/tree/refactor"
     },
     {
       "name": "[WIP] scribo",
       "description": "Drop-in WYSIWYG and Markdown editor for React, built with slate.js editor framework.",
       "url": "https://github.com/Matterwiki/scribo/"
+    },
+    {
+      "name": "krishnagopinath.me",
+      "description": "Portfolio website, built with GatsbyJS.",
+      "url": "https://github.com/krishnagopinath/website"
     },
     {
       "name": "cordova-plugin-ionic-migrate-storage",

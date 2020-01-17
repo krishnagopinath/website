@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Box, Flex } from "rebass/styled-components"
 
-import SocialIcon from "./social-icon"
+import SocialLink from "./social-link"
 
 /**
  * Shows a bunch of social links
@@ -23,18 +23,18 @@ const Social = () => {
     }
   `)
 
-  const { profiles: socialProfiles, email } = dataJson.basics
-  const profiles = [
-    { network: "GMail", url: `mailto:${email}` },
-    ...socialProfiles,
-  ]
+  const { profiles, email } = dataJson.basics
 
   return (
     <>
       <Flex>
+        <Box paddingRight={[3, 2]} key="GMail">
+          <SocialLink networkName="GMail" networkUrl={`mailto:${email}`} />
+        </Box>
+
         {profiles.map(p => (
-          <Box px={[3, 2]} key={p.network}>
-            <SocialIcon networkName={p.network} networkUrl={p.url} />
+          <Box paddingX={[3, 2]} key={p.network}>
+            <SocialLink networkName={p.network} networkUrl={p.url} />
           </Box>
         ))}
       </Flex>
