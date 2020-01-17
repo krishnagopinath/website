@@ -20,7 +20,7 @@ const IndexPage = () => (
     <Box>
       <About />
     </Box>
-    <Box my={4}>
+    <Box marginY={4}>
       <Social />
     </Box>
   </Main>

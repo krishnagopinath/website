@@ -9,7 +9,7 @@ const StyledH1 = styled.h1`
 const Header = () => (
   <StyledH1>
     Hello, I'm Krishna{" "}
-    <span role="img" aria-label="Peace emoji symbol">
+    <span role="img" aria-label="Peace emoji">
       ✌️
     </span>
   </StyledH1>

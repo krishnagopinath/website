@@ -10,6 +10,10 @@ const MdHtmlContainer = styled.div`
     max-width: 40em;
   }
 
+  /* 
+    ⚠️ 
+    This is potentially duplicated in multiple parts of the app. So if this is changed, maybe search and change everything!
+  */
   & a,
   & a:visited {
     color: ${props => props.theme.colors.primary};

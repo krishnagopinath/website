@@ -3,6 +3,8 @@ import { navigate } from "gatsby"
 import styled from "styled-components"
 import { Button } from "rebass/styled-components"
 
+import iconMap from "../utils/iconMap"
+
 const StyledButton = styled(Button)`
   cursor: pointer;
   background-color: ${props => props.theme.colors.primary};
@@ -14,11 +16,17 @@ const StyledButton = styled(Button)`
   }
 `
 
+const StyledIcon = styled(iconMap.arrowright)`
+  vertical-align: middle;
+`
+
 const ResumeLink = () => {
   const handleClick = useCallback(() => navigate("/resume/"), [])
 
   return (
-    <StyledButton onClick={handleClick}>Résumé&nbsp;&nbsp;&#8594;</StyledButton>
+    <StyledButton onClick={handleClick}>
+      Résumé <StyledIcon size={16} />
+    </StyledButton>
   )
 }
 
