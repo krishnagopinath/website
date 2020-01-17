@@ -3,7 +3,7 @@ import { Link as RLink } from "rebass/styled-components"
 import styled, { css } from "styled-components"
 
 /**
- * This is used as part of a master style sheet, so exporting this is beneficial!
+ * This is used as part of other styles; to prevent duplication, it is being exporting as is!
  */
 export const linkStyles = css`
   &,

@@ -12,6 +12,9 @@ const StyledList = styled(List)`
   padding-left: 40px;
 `
 
+/**
+ * Header component for the resume page
+ */
 const Header = () => {
   const { basics } = useResumeQuery()
   const { name, email, phone, website, profiles } = basics

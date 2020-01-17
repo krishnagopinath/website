@@ -19,6 +19,9 @@ const StyledIcon = styled(iconMap.arrowright)`
   vertical-align: middle;
 `
 
+/**
+ * The resume button in the index page
+ */
 const ResumeLink = () => {
   const handleClick = useCallback(() => navigate("/resume/"), [])
 

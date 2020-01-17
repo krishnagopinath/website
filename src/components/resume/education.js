@@ -32,13 +32,16 @@ const EducationRow = ({
       </i>
       {courses && (
         <div>
-          <i>Courses:&nbsp;{courses.join(", ")}</i>
+          <i>Relevant Courses:&nbsp;{courses.join(", ")}</i>
         </div>
       )}
     </ListItem>
   )
 }
 
+/**
+ * Education section in the resume
+ */
 const Education = () => {
   const { education } = useResumeQuery()
 

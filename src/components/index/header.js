@@ -1,6 +1,9 @@
 import React from "react"
 import Heading from "../heading"
 
+/**
+ * Header for the index page
+ */
 const Header = () => (
   <Heading>
     Hello, I'm Krishna{" "}

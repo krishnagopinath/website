@@ -1,6 +1,7 @@
 import React from "react"
 import { Flex, Box } from "rebass/styled-components"
 
+import Meta from "../components/meta"
 import Main from "../components/main"
 import Separator from "../components/separator"
 import Header from "../components/resume/header"
@@ -12,6 +13,7 @@ import Skills from "../components/resume/skills"
 const ResumePage = () => {
   return (
     <Main>
+      <Meta title="Resume" />
       <Flex flexDirection="column" flexWrap="wrap">
         <Box marginBottom={3}>
           <Header />

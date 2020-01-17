@@ -49,6 +49,9 @@ const CompanyExperience = ({
   )
 }
 
+/**
+ * Work experience section in the resume page
+ */
 const WorkExperience = () => {
   const { work } = useResumeQuery()
 

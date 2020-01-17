@@ -23,6 +23,9 @@ const Project = ({ description, name, url }) => {
   )
 }
 
+/**
+ * Projects section in the resume page
+ */
 const Projects = () => {
   const { projects } = useResumeQuery()
 

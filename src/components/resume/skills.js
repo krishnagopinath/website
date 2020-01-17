@@ -12,7 +12,10 @@ const SkillSet = ({ name, keywords }) => (
   </ListItem>
 )
 
-const Education = () => {
+/**
+ * Skills section in the resume page
+ */
+const Skills = () => {
   const { skills } = useResumeQuery()
 
   return (
@@ -29,4 +32,4 @@ const Education = () => {
   )
 }
 
-export default Education
+export default Skills
