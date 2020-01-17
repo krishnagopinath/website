@@ -1,4 +1,5 @@
 import {
+  FaArrowLeft,
   FaArrowRight,
   FaEnvelope,
   FaGithub,
@@ -14,6 +15,7 @@ import {
  */
 export default {
   default: FaQuestionCircle,
+  arrowleft: FaArrowLeft,
   arrowright: FaArrowRight,
   gmail: FaEnvelope,
   github: FaGithub,

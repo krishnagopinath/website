@@ -1,28 +1,19 @@
 import React from "react"
-import { Box } from "rebass/styled-components"
 
-import Header from "../components/header"
+import About from "../components/index/about"
+import Header from "../components/index/header"
 import Main from "../components/main"
 import Meta from "../components/meta"
-import About from "../components/about"
-import Social from "../components/social"
-import ResumeLink from "../components/resume-link"
+import ResumeLink from "../components/index/resume-link"
+import Social from "../components/index/social"
 
 const IndexPage = () => (
   <Main>
     <Meta title="Home" />
-    <Box>
-      <Header />
-    </Box>
-    <Box>
-      <ResumeLink />
-    </Box>
-    <Box>
-      <About />
-    </Box>
-    <Box marginY={4}>
-      <Social />
-    </Box>
+    <Header />
+    <ResumeLink />
+    <About />
+    <Social />
   </Main>
 )
 

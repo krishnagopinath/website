@@ -34,7 +34,7 @@ const Main = ({ children }) => {
           justifyContent="flex-start"
           alignItems="flex-start"
         >
-          <Box fontSize={[2, 2, 3]} padding={3}>
+          <Box fontSize={[2, 2, 3]} paddingLeft={3} width="100%">
             <main>{children}</main>
           </Box>
         </Flex>

@@ -3,7 +3,7 @@ import { navigate } from "gatsby"
 import styled from "styled-components"
 import { Button } from "rebass/styled-components"
 
-import iconMap from "../utils/iconMap"
+import iconMap from "../../utils/iconMap"
 
 const StyledButton = styled(Button)`
   cursor: pointer;
@@ -11,8 +11,7 @@ const StyledButton = styled(Button)`
   border: solid 1px ${props => props.theme.colors.primary};
 
   &:hover {
-    background-color: white;
-    color: ${props => props.theme.colors.primary};
+    opacity: 0.7;
   }
 `
 

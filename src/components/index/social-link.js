@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "rebass/styled-components"
 
-import iconMap from "../utils/iconMap"
+import iconMap from "../../utils/iconMap"
 
 const StyledLink = styled(Link)`
   color: #000000;

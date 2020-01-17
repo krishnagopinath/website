@@ -1,18 +1,13 @@
 import React from "react"
-import styled from "styled-components"
-
-const StyledH1 = styled.h1`
-  font-weight: 400;
-  font-style: normal;
-`
+import Heading from "../heading"
 
 const Header = () => (
-  <StyledH1>
+  <Heading>
     Hello, I'm Krishna{" "}
     <span role="img" aria-label="Peace emoji">
       ✌️
     </span>
-  </StyledH1>
+  </Heading>
 )
 
 export default Header
