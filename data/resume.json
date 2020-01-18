@@ -161,7 +161,7 @@
     },
     {
       "name": "cordova-plugin-ionic-migrate-storage",
-      "description": "Cordova plugin that migrates WebSQL, localStorage and IndexedDB data when Ionic's webview plugin is used.",
+      "description": "Cordova plugin that migrates app data when Ionic's webview plugin is used.",
       "url": "https://github.com/pointmanhq/cordova-plugin-ionic-migrate-storage"
     }
   ],
