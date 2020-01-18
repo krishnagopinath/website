@@ -15,7 +15,6 @@ const Social = () => {
           profiles {
             network
             url
-            username
           }
           email
         }

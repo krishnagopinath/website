@@ -6,6 +6,7 @@ import styled from "styled-components"
 export const List = styled.ul`
   list-style-type: none;
   padding-left: 0;
+  margin: 0.4em 0 0 0;
 `
 
 /**

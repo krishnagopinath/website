@@ -12,7 +12,7 @@ export const linkStyles = css`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
     transition: all 150ms linear 0s;
-    padding: 2px;
+    padding: 0.1em;
   }
 
   &:hover,

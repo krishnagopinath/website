@@ -30,7 +30,7 @@ const EducationRow = ({
       <i>
         {startDateFormatted} - {endDateFormatted}
       </i>
-      {courses && (
+      {courses.length && (
         <div>
           <i>Relevant Courses:&nbsp;{courses.join(", ")}</i>
         </div>
