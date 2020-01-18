@@ -151,7 +151,7 @@
   "projects": [
     {
       "name": "[WIP] Matterwiki",
-      "description": "A simple wiki for small teams, built with Node, React and PosgreSQL",
+      "description": "A simple wiki for small teams, built with Node, React and PosgreSQL.",
       "url": "https://github.com/Matterwiki/Matterwiki/tree/refactor"
     },
     {
