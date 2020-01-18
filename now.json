@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "website",
+  "routes": [{ "handle": "filesystem" }, { "src": "/(.*)", "dest": "/404" }]
+}
