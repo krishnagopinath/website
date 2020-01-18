@@ -1,0 +1,46 @@
+name: Node CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm ci
+        env:
+          CI: true
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+      - name: Deploy to zeit/now
+        uses: amondnet/now-deployment@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          zeit-token: ${{ secrets.ZEIT_TOKEN }}
+          now-args: "--prod"
+      - name: Create PDF at "files/resume.pdf"
+        uses: mujo-code/puppeteer-headful@0bc4f88
+        env:
+          CI: "true"
+          SRC_URL: "https://krishnagopinath.me/resume"
+        with:
+          args: npm run make-pdf-resume
+      - name: Commit "files/resume.pdf"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add files/resume.pdf
+          git commit -m "🤖📄 Update files/resume.pdf"
+      - name: Push changes
+        uses: ad-m/github-push-action@19caa5c
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

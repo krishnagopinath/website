@@ -9,6 +9,7 @@ const StyledButton = styled(Button)`
   cursor: pointer;
   background-color: ${props => props.theme.colors.primary};
   border: solid 1px ${props => props.theme.colors.primary};
+  font-size: 0.8em;
 
   &:hover {
     opacity: 0.7;
@@ -21,14 +22,28 @@ const StyledIcon = styled(iconMap.arrowright)`
 
 /**
  * The resume button in the index page
+ *
  */
 const ResumeLink = () => {
-  const handleClick = useCallback(() => navigate("/resume/"), [])
+  const handlePageClick = useCallback(() => navigate("/resume/"), [])
+  const handlePdfClick = useCallback(
+    () =>
+      window.open(
+        "https://github.com/krishnagopinath/website/raw/master/files/resume.pdf",
+        "_blank"
+      ),
+    []
+  )
 
   return (
-    <StyledButton onClick={handleClick}>
-      Résumé <StyledIcon size={16} />
-    </StyledButton>
+    <>
+      <StyledButton onClick={handlePageClick}>
+        Résumé <StyledIcon size={12} />
+      </StyledButton>
+      <StyledButton marginLeft={3} onClick={handlePdfClick}>
+        Résumé (PDF) <StyledIcon size={12} />
+      </StyledButton>
+    </>
   )
 }
 

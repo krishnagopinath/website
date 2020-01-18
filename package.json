@@ -24,9 +24,11 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "app-root-path": "^3.0.0",
     "husky": "^4.0.10",
     "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "puppeteer": "^2.0.0"
   },
   "keywords": [
     "gatsby"
@@ -39,7 +41,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "now-build": "npm run build && mv public dist",
+    "make-pdf-resume": "node scripts/makePdfResume.js"
   },
   "repository": {
     "type": "git",
