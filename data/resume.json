@@ -53,7 +53,7 @@
       "highlights": [
         "Designed and built Pointman's Payment integration from scratch, which involved scoping out requirements, writing a cordova plugin to interact with Mobile Payment SDKs, writing API wrapper libraries in Node.js, .NET platforms & integrating with multiple web and cordova apps.",
         "Improved the team's ability to rapidly deliver new product features by replacing Pointman's legacy UI build process with a fast, standardized CLI process using Node.js and webpack. This also involved writing custom codemod scripts for Pointman's codebase, with jscodeshift.",
-        "Spearheaded the migration from AngularJS to Vue.js by creating a \"Vue base\" inside the app and leading a 2-member team to migrate an existing feature. This enabled the team to build new features in Pointman very quickly.",
+        "Spearheaded the migration from AngularJS to Vue.js by creating a \"Vue base\" inside the app and leading a 2-member team to migrate an existing feature. This enabled the team to build new features rapidly.",
         "Automated deployment processes by setting up CI/CD pipelines for Pointman's Web, Mobile and API projects using Azure DevOps, which empowered the team to build & ship at a rapid pace.",
         "Fostered a mindset of learning and collaboration by mentoring new engineers, performing in-depth code reviews and leading pair programming sessions.",
         "Modernized Pointman's legacy application by systematically rewriting critical parts of it to be more resilient, faster & easier to maintain, resulting in a more stable user experience with reduced bugs."
