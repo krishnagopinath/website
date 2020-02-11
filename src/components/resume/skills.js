@@ -1,5 +1,6 @@
-import React from "react"
-import { Box } from "rebass/styled-components"
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
+import React from "react" // eslint-disable-line no-unused-vars
 
 import SubHeading from "../sub-heading"
 import { List, ListItem } from "../list"
@@ -21,7 +22,11 @@ const Skills = () => {
   return (
     <>
       <SubHeading>Skills</SubHeading>
-      <Box fontSize={2}>
+      <Box
+        sx={{
+          fontSize: 2,
+        }}
+      >
         <List>
           {skills.map(s => (
             <SkillSet key={s.name} {...s} />

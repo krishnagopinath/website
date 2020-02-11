@@ -1,10 +1,17 @@
-import styled from "styled-components"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+
+const Separator = () => (
+  <div
+    sx={{
+      borderBottomColor: "seperator",
+      borderBlockEndStyle: "solid",
+      borderBottomWidth: "1px",
+    }}
+  />
+)
 
 /**
  * Horizontal line seperator
  */
-const Separator = styled.div`
-  border-bottom: 1px solid #00000014;
-`
-
 export default Separator

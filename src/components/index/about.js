@@ -1,21 +1,8 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
 
 import { linkStyles } from "../link"
-
-/**
- * Nested styles for the Markdown => HTML content
- */
-const MdHtmlContainer = styled.div`
-  > p {
-    max-width: 40em;
-  }
-
-  & a {
-    ${linkStyles}
-  }
-`
 
 /**
  * Shows a summary, sourced from data/about.md
@@ -30,7 +17,13 @@ const About = () => {
   `)
 
   return (
-    <MdHtmlContainer
+    <div
+      sx={{
+        p: {
+          maxWidth: "40em",
+        },
+        a: linkStyles,
+      }}
       dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
     />
   )

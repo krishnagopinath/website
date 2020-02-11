@@ -1,6 +1,5 @@
-import React from "react"
-import styled from "styled-components"
-import { Box, Flex } from "rebass/styled-components"
+/** @jsx jsx */
+import { jsx, Box, Flex } from "theme-ui"
 
 import Heading from "../heading"
 import Link from "../link"
@@ -8,16 +7,22 @@ import { List } from "../list"
 
 import useResumeQuery from "../../hooks/useResumeQuery"
 
-const StyledList = styled(List)`
-  padding-left: 2em;
-`
+const Ul = props => (
+  <List
+    sx={{
+      paddingLeft: "2em",
+    }}
+    {...props}
+  />
+)
 
 /**
  * Header component for the resume page
  */
 const Header = () => {
-  const { basics } = useResumeQuery()
+  const { basics, meta } = useResumeQuery()
   const { name, email, phone, website, profiles } = basics
+  const { lastModified } = meta
 
   const githubProfile = profiles.find(p => p.network.toLowerCase() === "github")
   const stackOverflowProfile = profiles.find(
@@ -28,13 +33,33 @@ const Header = () => {
   )
 
   return (
-    <Flex alignItems="center" flexWrap="wrap">
+    <Flex
+      sx={{
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <Box
+        sx={{
+          fontStyle: "italic",
+          fontSize: "11px",
+          position: "absolute",
+          top: 2,
+          right: 10,
+        }}
+      >
+        Last Updated on {lastModified}
+      </Box>
       <Box>
         <Heading>{name.toUpperCase()}</Heading>
       </Box>
-      <Box fontSize={1}>
-        <Flex flexWrap="wrap">
-          <StyledList>
+      <Box sx={{ fontSize: 1 }}>
+        <Flex
+          sx={{
+            flexWrap: "wrap",
+          }}
+        >
+          <Ul>
             <li>
               <Link href={website}>{website}</Link>
             </li>
@@ -44,8 +69,8 @@ const Header = () => {
             <li>
               <Link href={`tel:${phone}`}>{phone}</Link>
             </li>
-          </StyledList>
-          <StyledList>
+          </Ul>
+          <Ul>
             <li>
               <Link href={linkedInProfile.url}>{linkedInProfile.url}</Link>
             </li>
@@ -57,7 +82,7 @@ const Header = () => {
                 {stackOverflowProfile.url}
               </Link>
             </li>
-          </StyledList>
+          </Ul>
         </Flex>
       </Box>
     </Flex>

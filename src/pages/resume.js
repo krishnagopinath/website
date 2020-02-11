@@ -1,5 +1,5 @@
-import React from "react"
-import { Flex, Box } from "rebass/styled-components"
+/** @jsx jsx */
+import { jsx, Box, Flex } from "theme-ui"
 
 import Meta from "../components/meta"
 import Main from "../components/main"
@@ -9,36 +9,57 @@ import WorkExperience from "../components/resume/work-experience"
 import Education from "../components/resume/education"
 import Projects from "../components/resume/projects"
 import Skills from "../components/resume/skills"
+import Footer from "../components/resume/footer"
+
+const SpacedBox = props => (
+  <Box
+    sx={{
+      marginBottom: 2,
+    }}
+    {...props}
+  />
+)
 
 const ResumePage = () => {
   return (
     <Main>
       <Meta title="Resume" />
-      <Flex flexDirection="column" flexWrap="wrap">
-        <Box marginBottom={3}>
+      <Flex
+        sx={{
+          flexDirection: "column",
+          flexWrap: "wrap",
+        }}
+      >
+        <Box
+          as={SpacedBox}
+          sx={{
+            marginBottom: 3,
+          }}
+        >
           <Header />
           <Separator />
         </Box>
 
-        <Box marginBottom={2}>
+        <SpacedBox>
           <WorkExperience />
           <Separator />
-        </Box>
+        </SpacedBox>
 
-        <Box marginBottom={2}>
+        <SpacedBox>
           <Projects />
           <Separator />
-        </Box>
+        </SpacedBox>
 
-        <Box marginBottom={2}>
+        <SpacedBox>
           <Education />
           <Separator />
-        </Box>
+        </SpacedBox>
 
-        <Box marginBottom={2}>
+        <SpacedBox>
           <Skills />
           <Separator />
-        </Box>
+          <Footer />
+        </SpacedBox>
       </Flex>
     </Main>
   )
