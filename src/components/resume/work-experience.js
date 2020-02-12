@@ -7,13 +7,14 @@ import { List, ListItem } from "../list"
 
 import useResumeQuery from "../../hooks/useResumeQuery"
 import formatDate, { formats } from "../../utils/formatDate"
-import { linkStyles } from "../link"
+import Link, { linkStyles } from "../link"
 
 const CompanyExperience = ({
   startDate,
   endDate,
   position,
   name,
+  website,
   location,
   highlights,
 }) => {
@@ -25,9 +26,9 @@ const CompanyExperience = ({
 
   return (
     <ListItem>
-      <strong>
-        {position}, {name}
-      </strong>
+      <strong>{position}</strong>
+      &#44;&nbsp;
+      <Link href={website}>{name}</Link>
       &nbsp;&#x2014;&nbsp;
       <i>
         {startDateFormatted} - {endDateFormatted}
