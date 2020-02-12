@@ -20,9 +20,8 @@ const Ul = props => (
  * Header component for the resume page
  */
 const Header = () => {
-  const { basics, meta } = useResumeQuery()
+  const { basics } = useResumeQuery()
   const { name, email, phone, website, profiles } = basics
-  const { lastModified } = meta
 
   const githubProfile = profiles.find(p => p.network.toLowerCase() === "github")
   const stackOverflowProfile = profiles.find(
@@ -39,17 +38,6 @@ const Header = () => {
         flexWrap: "wrap",
       }}
     >
-      <Box
-        sx={{
-          fontStyle: "italic",
-          fontSize: "11px",
-          position: "absolute",
-          top: 2,
-          right: 10,
-        }}
-      >
-        Last Updated on {lastModified}
-      </Box>
       <Box>
         <Heading>{name.toUpperCase()}</Heading>
       </Box>
