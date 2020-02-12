@@ -55,6 +55,7 @@ export default {
       fontFamily: "heading",
       fontWeight: "heading",
       fontStyle: "normal",
+      marginBottom: 2,
     },
     h2: {
       color: "gray",

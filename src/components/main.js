@@ -23,7 +23,7 @@ const Main = ({ children }) => {
       <Box
         sx={{
           fontSize: [2, 2, 3],
-          paddingLeft: 3,
+          paddingX: 2,
           width: "100%",
         }}
       >

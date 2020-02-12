@@ -3,17 +3,23 @@ import { jsx, Box, Flex } from "theme-ui"
 
 import Heading from "../heading"
 import Link from "../link"
-import { List } from "../list"
+import { List, ListItem } from "../list"
 
 import useResumeQuery from "../../hooks/useResumeQuery"
 
 const Ul = props => (
-  <List
+  <Box
+    as={List}
     sx={{
-      paddingLeft: "2em",
+      margin: 2,
+      marginY: 0,
     }}
     {...props}
   />
+)
+
+const Li = props => (
+  <Box as={ListItem} sx={{ paddingBottom: "0.15em" }} {...props} />
 )
 
 /**
@@ -41,35 +47,43 @@ const Header = () => {
       <Box>
         <Heading>{name.toUpperCase()}</Heading>
       </Box>
-      <Box sx={{ fontSize: 1 }}>
+      <Box
+        sx={{
+          fontSize: 1,
+          paddingLeft: [null, 3, 4],
+          "@media print": {
+            paddingLeft: 4,
+          },
+        }}
+      >
         <Flex
           sx={{
             flexWrap: "wrap",
           }}
         >
           <Ul>
-            <li>
+            <Li>
               <Link href={website}>{website}</Link>
-            </li>
-            <li>
+            </Li>
+            <Li>
               <Link href={`mailto:${email}`}>{email}</Link>
-            </li>
-            <li>
+            </Li>
+            <Li>
               <Link href={`tel:${phone}`}>{phone}</Link>
-            </li>
+            </Li>
           </Ul>
           <Ul>
-            <li>
+            <Li>
               <Link href={linkedInProfile.url}>{linkedInProfile.url}</Link>
-            </li>
-            <li>
+            </Li>
+            <Li>
               <Link href={githubProfile.url}>{githubProfile.url}</Link>
-            </li>
-            <li>
+            </Li>
+            <Li>
               <Link href={stackOverflowProfile.url}>
                 {stackOverflowProfile.url}
               </Link>
-            </li>
+            </Li>
           </Ul>
         </Flex>
       </Box>
