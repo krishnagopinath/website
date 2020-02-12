@@ -135,6 +135,7 @@
         "chai.js",
         "jest",
         "styled-components",
+        "emotion",
         "Entity Framework 6",
         "ASP.NET Web API 2"
       ]
@@ -175,6 +176,6 @@
   "references": [],
   "meta": {
     "canonical": "https://krishnagopinath.me/resume",
-    "lastModified": ""
+    "lastModified": "Feb 11, 2020"
   }
 }

@@ -1,24 +1,19 @@
-import React, { useCallback } from "react"
+/** @jsx jsx */
+import { jsx, Button } from "theme-ui"
+import React from "react" // eslint-disable-line no-unused-vars
+import { useCallback } from "react"
 import { navigate } from "gatsby"
-import styled from "styled-components"
-import { Button } from "rebass/styled-components"
 
 import iconMap from "../../utils/iconMap"
 
-const StyledButton = styled(Button)`
-  cursor: pointer;
-  background-color: ${props => props.theme.colors.primary};
-  border: solid 1px ${props => props.theme.colors.primary};
-  font-size: 0.8em;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`
-
-const StyledIcon = styled(iconMap.arrowright)`
-  vertical-align: middle;
-`
+const ArrowRightIcon = () => (
+  <iconMap.arrowright
+    sx={{
+      verticalAlign: "middle",
+    }}
+    size={12}
+  />
+)
 
 /**
  * The resume button in the index page
@@ -37,12 +32,12 @@ const ResumeLink = () => {
 
   return (
     <>
-      <StyledButton onClick={handlePageClick}>
-        Résumé <StyledIcon size={12} />
-      </StyledButton>
-      <StyledButton marginLeft={3} onClick={handlePdfClick}>
-        Résumé (PDF) <StyledIcon size={12} />
-      </StyledButton>
+      <Button variant="primary" onClick={handlePageClick}>
+        Résumé <ArrowRightIcon />
+      </Button>
+      <Button marginLeft={3} onClick={handlePdfClick}>
+        Résumé (PDF) <ArrowRightIcon />
+      </Button>
     </>
   )
 }

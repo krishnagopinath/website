@@ -1,18 +1,36 @@
-import styled from "styled-components"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 /**
  * Generic unordered list (`ul`), with some minimal tweaks
  */
-export const List = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0.4em 0 0 0;
-`
+export const List = props => {
+  return (
+    <ul
+      sx={{
+        listStyleType: "none",
+        paddingLeft: 0,
+        marginTop: "0.4em",
+        marginRight: 0,
+        marginBottom: 0,
+        marginLeft: 0,
+      }}
+      {...props}
+    />
+  )
+}
 
 /**
  * Generic list item (`li`), with some minimal tweaks
  */
-export const ListItem = styled.li`
-  padding-bottom: 0.5em;
-  max-width: 55em;
-`
+export const ListItem = props => {
+  return (
+    <li
+      sx={{
+        paddingBottom: "0.5em",
+        maxWidth: "55em",
+      }}
+      {...props}
+    />
+  )
+}

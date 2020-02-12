@@ -1,43 +1,39 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Box, Flex } from "rebass/styled-components"
+/** @jsx jsx */
+import { jsx, Box, Flex } from "theme-ui"
 
 import SocialLink from "./social-link"
+
+import useResumeQuery from "../../hooks/useResumeQuery"
 
 /**
  * Shows a bunch of social links
  */
 const Social = () => {
-  const { dataJson } = useStaticQuery(graphql`
-    {
-      dataJson {
-        basics {
-          profiles {
-            network
-            url
-          }
-          email
-        }
-      }
-    }
-  `)
-
-  const { profiles, email } = dataJson.basics
+  const { basics } = useResumeQuery()
+  const { profiles, email } = basics
 
   return (
-    <>
-      <Flex>
-        <Box paddingRight={[3, 2]} key="GMail">
-          <SocialLink networkName="GMail" networkUrl={`mailto:${email}`} />
-        </Box>
+    <Flex>
+      <Box
+        sx={{
+          paddingRight: [3, 2],
+        }}
+        key="GMail"
+      >
+        <SocialLink networkName="GMail" networkUrl={`mailto:${email}`} />
+      </Box>
 
-        {profiles.map(p => (
-          <Box paddingX={[3, 2]} key={p.network}>
-            <SocialLink networkName={p.network} networkUrl={p.url} />
-          </Box>
-        ))}
-      </Flex>
-    </>
+      {profiles.map(p => (
+        <Box
+          sx={{
+            paddingX: [3, 2],
+          }}
+          key={p.network}
+        >
+          <SocialLink networkName={p.network} networkUrl={p.url} />
+        </Box>
+      ))}
+    </Flex>
   )
 }
 

@@ -1,23 +1,10 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
-import { Box, Flex } from "rebass/styled-components"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { Box, Flex } from "theme-ui"
 
-import theme from "../utils/theme"
-
-/**
- * Global style block, to set up any global CSS.
- *
- * ⚠️Use sparingly!
- */
-const GlobalBodyStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-  body {
-    font-family: 'Open Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.4;
-  }
-`
+// Importing global font
+import "typeface-open-sans"
 
 /**
  * Main layout component that wraps all of the website
@@ -26,20 +13,23 @@ const GlobalBodyStyles = createGlobalStyle`
  */
 const Main = ({ children }) => {
   return (
-    <>
-      <GlobalBodyStyles />
-      <ThemeProvider theme={theme}>
-        <Flex
-          flexDirection="row"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-        >
-          <Box fontSize={[2, 2, 3]} paddingLeft={3} width="100%">
-            <main>{children}</main>
-          </Box>
-        </Flex>
-      </ThemeProvider>
-    </>
+    <Flex
+      sx={{
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+      }}
+    >
+      <Box
+        sx={{
+          fontSize: [2, 2, 3],
+          paddingLeft: 3,
+          width: "100%",
+        }}
+      >
+        <main>{children}</main>
+      </Box>
+    </Flex>
   )
 }
 

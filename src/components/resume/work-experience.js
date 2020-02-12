@@ -1,19 +1,13 @@
-import React from "react"
-import styled from "styled-components"
-import { Box } from "rebass/styled-components"
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
+import React from "react" // eslint-disable-line no-unused-vars
 
 import SubHeading from "../sub-heading"
 import { List, ListItem } from "../list"
-import { linkStyles } from "../link"
 
 import useResumeQuery from "../../hooks/useResumeQuery"
 import formatDate, { formats } from "../../utils/formatDate"
-
-const HighlightListItem = styled.li`
-  & a {
-    ${linkStyles}
-  }
-`
+import { linkStyles } from "../link"
 
 const CompanyExperience = ({
   startDate,
@@ -42,7 +36,13 @@ const CompanyExperience = ({
       <i>{location}</i>
       <ul>
         {highlights.map((h, i) => (
-          <HighlightListItem key={i} dangerouslySetInnerHTML={{ __html: h }} />
+          <li
+            sx={{
+              a: linkStyles,
+            }}
+            key={i}
+            dangerouslySetInnerHTML={{ __html: h }}
+          />
         ))}
       </ul>
     </ListItem>
@@ -58,7 +58,11 @@ const WorkExperience = () => {
   return (
     <>
       <SubHeading>Experience</SubHeading>
-      <Box fontSize={2}>
+      <Box
+        sx={{
+          fontSize: 2,
+        }}
+      >
         <List>
           {work.map(w => (
             <CompanyExperience key={w.startDate} {...w} />

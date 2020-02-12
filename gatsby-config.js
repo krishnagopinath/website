@@ -11,8 +11,8 @@ module.exports = {
     siteUrl: website,
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,

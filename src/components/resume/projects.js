@@ -1,6 +1,6 @@
-import React from "react"
-import { Box } from "rebass/styled-components"
-import styled from "styled-components"
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
+import React from "react" // eslint-disable-line no-unused-vars
 
 import SubHeading from "../sub-heading"
 import Link from "../link"
@@ -8,18 +8,14 @@ import { List, ListItem } from "../list"
 
 import useResumeQuery from "../../hooks/useResumeQuery"
 
-const StyledListItem = styled(ListItem)`
-  padding-bottom: 0.1em;
-`
-
 const Project = ({ description, name, url }) => {
   return (
-    <StyledListItem>
+    <Box as={ListItem} sx={{ paddingBottom: "0.1em" }}>
       <Link href={url}>
         <strong>{name}</strong>
       </Link>
       :&nbsp;<span>{description}</span>
-    </StyledListItem>
+    </Box>
   )
 }
 
@@ -32,7 +28,11 @@ const Projects = () => {
   return (
     <>
       <SubHeading>Projects</SubHeading>
-      <Box fontSize={2}>
+      <Box
+        sx={{
+          fontSize: 2,
+        }}
+      >
         <List>
           {projects.map(p => (
             <Project key={p.name} {...p} />
