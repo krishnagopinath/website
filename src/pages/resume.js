@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box, Flex } from "theme-ui"
+import React from "react"
+import { Box, Flex } from "theme-ui"
 
 import Meta from "../components/meta"
 import Main from "../components/main"

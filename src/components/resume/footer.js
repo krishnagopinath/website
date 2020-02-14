@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box } from "theme-ui"
+import React from "react"
+import { Box } from "theme-ui"
 import useResumeQuery from "../../hooks/useResumeQuery"
 
 const Footer = () => {

@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import React from "react" // eslint-disable-line no-unused-vars
+import React from "react"
+import { Box } from "theme-ui"
 
 import SubHeading from "../sub-heading"
 import { List, ListItem } from "../list"

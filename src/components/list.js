@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+import React from "react"
 
 /**
  * Generic unordered list (`ul`), with some minimal tweaks

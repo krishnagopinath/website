@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx, Button } from "theme-ui"
-import React from "react" // eslint-disable-line no-unused-vars
-import { useCallback } from "react"
+import React, { useCallback } from "react"
+import { Button } from "theme-ui"
 import { navigate } from "gatsby"
 
 import iconMap from "../../utils/iconMap"

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+import React from "react"
 import PropTypes from "prop-types"
 import { Box, Flex } from "theme-ui"
 

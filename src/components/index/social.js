@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box, Flex } from "theme-ui"
+import React from "react"
+import { Box, Flex } from "theme-ui"
 
 import SocialLink from "./social-link"
 
