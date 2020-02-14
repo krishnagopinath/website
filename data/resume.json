@@ -81,7 +81,7 @@
       "summary": "",
       "highlights": [
         "Architected & built a mobile app platform with infrastructure for hosting internal \"micro\" mobile web apps. Built with cordova, AngularJS, ASP.NET Web API & SQL Server, this platform was used by over 10,000 employees daily.",
-        "Designed & developed an in-memory distributed cache as a service with AppFabric & ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps. This service was consumed by about 60 clients and saw traffic of about 3000 unique users a day.",
+        "Designed & developed an in-memory distributed cache as a service with ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps. This service was consumed by about 60 clients and saw traffic of about 3000 unique users a day.",
         "Conducted multi-day workshops on JavaScript, jQuery & AngularJS to train large software teams within the organization."
       ]
     }

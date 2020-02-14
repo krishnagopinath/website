@@ -37,6 +37,13 @@ const parseEnvVars = () => {
   }
 }
 
+/**
+ * Simple sleep fn that could be `await`ed
+ * @param {number} delayMs
+ */
+const sleep = delayMs =>
+  new Promise((resolve, reject) => setTimeout(resolve, delayMs))
+
 const { srcUrl, execPathOrName } = parseEnvVars()
 if (!srcUrl)
   return throwAndExit(
@@ -57,16 +64,30 @@ fs.unlink(pdfPath, async err => {
 
   try {
     const launchOpts = Object.assign(
-      { args: ["--no-sandbox", "--disable-setuid-sandbox"] },
+      {
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          // Disble cache
+          "--disk-cache-size=0",
+        ],
+      },
       execPathOrName ? { executablePath: execPathOrName } : null
     )
     const browser = await puppeteer.launch(launchOpts)
     const page = await browser.newPage()
 
+    // Some cool off time for the website to be ready
+    console.log(`Sleeping for 10s...`)
+    await sleep(10000)
+
     await page.goto(srcUrl, {
       waitUntil: "networkidle2",
     })
 
+    // Some more cool off time for the website to be ready
+    console.log(`Sleeping for 2s...`)
+    await sleep(2000)
     console.log(`Printing PDF from ${srcUrl}`)
 
     await page.pdf({
