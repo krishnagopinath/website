@@ -30,11 +30,11 @@ const EducationRow = ({
       <i>
         {startDateFormatted} - {endDateFormatted}
       </i>
-      {courses.length && (
+      {courses.length ? (
         <div>
           <i>Relevant Courses:&nbsp;{courses.join(", ")}</i>
         </div>
-      )}
+      ) : null}
     </ListItem>
   )
 }
