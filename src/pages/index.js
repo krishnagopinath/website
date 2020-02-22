@@ -4,14 +4,14 @@ import About from "../components/index/about"
 import Header from "../components/index/header"
 import Main from "../components/main"
 import Meta from "../components/meta"
-import ResumeLink from "../components/index/resume-link"
+import ResumeLinks from "../components/index/resume-links"
 import Social from "../components/index/social"
 
 const IndexPage = () => (
   <Main>
     <Meta title="Home" />
     <Header />
-    <ResumeLink />
+    <ResumeLinks />
     <About />
     <Social />
   </Main>

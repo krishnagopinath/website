@@ -21,8 +21,19 @@ export default {
     muted: "#999999",
     seperator: "#00000014",
   },
-  buttons: {
-    primary: {
+  links: {
+    icon: {
+      color: "text",
+      ":hover": {
+        color: "primary",
+      },
+    },
+    resume: {
+      display: "inline-block",
+      textDecoration: "none",
+      borderRadius: "4px",
+      paddingX: 3,
+      paddingY: 2,
       cursor: "pointer",
       backgroundColor: "primary",
       color: "background",
@@ -32,14 +43,6 @@ export default {
       fontSize: "0.8em",
       "&:hover": {
         opacity: "0.7",
-      },
-    },
-  },
-  links: {
-    icon: {
-      color: "text",
-      ":hover": {
-        color: "primary",
       },
     },
   },
