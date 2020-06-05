@@ -44,11 +44,23 @@
   },
   "work": [
     {
+      "name": "Patch Media",
+      "location": "New York, NY",
+      "position": "Senior Software Engineer",
+      "website": "https://patch.com",
+      "startDate": "2020-06-08",
+      "summary": "",
+      "highlights": [
+        "Assisting in refactoring a Drupal backend to use Node.js & AWS lambda."
+      ]
+    },
+    {
       "name": "Pointman",
       "location": "Buffalo, NY",
       "position": "Senior Software Engineer",
       "website": "https://pointman.com",
       "startDate": "2017-03-27",
+      "endDate": "2020-05-30",
       "summary": "",
       "highlights": [
         "Designed and built Pointman's Payment integration from scratch, which involved scoping out requirements, writing a cordova plugin to interact with Mobile Payment SDKs, writing API wrapper libraries in Node.js, .NET platforms & integrating with multiple web and cordova apps.",
@@ -68,7 +80,7 @@
       "endDate": "2016-08-30",
       "summary": "",
       "highlights": [
-        "Ideated and built the first version of <a href=\"https://memoryfox.io\">MemoryFox</a>, a platform for aggregating crowd-sourced social media content at events. Web & hybrid mobile apps built with React, cordova, Node.js, MySQL."
+        "Ideated and built the first version of <a href=\"https://memoryfox.io\">MemoryFox</a>, a platform for aggregating crowd-sourced social media content at events."
       ]
     },
     {
@@ -151,14 +163,9 @@
   ],
   "projects": [
     {
-      "name": "[WIP] Matterwiki",
+      "name": "Matterwiki",
       "description": "A simple wiki for small teams, built with Node, React and MySQL.",
       "url": "https://github.com/Matterwiki/Matterwiki/tree/refactor"
-    },
-    {
-      "name": "[WIP] scribo",
-      "description": "Drop-in WYSIWYG and Markdown editor for React, built with slate.js editor framework.",
-      "url": "https://github.com/Matterwiki/scribo/"
     },
     {
       "name": "cordova-plugin-ionic-migrate-storage",
@@ -176,6 +183,6 @@
   "references": [],
   "meta": {
     "canonical": "https://krishnagopinath.me/resume",
-    "lastModified": "Feb 13, 2020"
+    "lastModified": "June 5, 2020"
   }
 }
