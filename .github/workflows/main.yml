@@ -21,12 +21,12 @@ jobs:
         env:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-      - name: Deploy to zeit/now
-        uses: amondnet/now-deployment@v1
+      - name: Deploy to vercel
+        uses: amondnet/vercel-action@v19
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          zeit-token: ${{ secrets.ZEIT_TOKEN }}
-          now-args: "--prod --confirm"
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: "--prod --confirm"
       - name: Create PDF at "files/resume.pdf"
         uses: mujo-code/puppeteer-headful@0bc4f88
         env:
