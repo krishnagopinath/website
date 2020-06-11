@@ -44,17 +44,6 @@
   },
   "work": [
     {
-      "name": "Patch Media",
-      "location": "New York, NY",
-      "position": "Senior Software Engineer",
-      "website": "https://patch.com",
-      "startDate": "2020-06-08",
-      "summary": "",
-      "highlights": [
-        "Assisting in refactoring a Drupal backend to use Node.js & AWS lambda."
-      ]
-    },
-    {
       "name": "Pointman",
       "location": "Buffalo, NY",
       "position": "Senior Software Engineer",
@@ -183,6 +172,6 @@
   "references": [],
   "meta": {
     "canonical": "https://krishnagopinath.me/resume",
-    "lastModified": "June 5, 2020"
+    "lastModified": "June 11, 2020"
   }
 }
