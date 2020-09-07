@@ -13,4 +13,4 @@ During my free time, I could be doing any of the following:
 - Capturing [pictures of food, places and architecture](https://www.instagram.com/krishwader).
 - Cooking vegetarian recipes from a multitude of cuisines.
 
-I currently live in Buffalo, NY. 📍
+I currently live in New York City. 🗽📍
