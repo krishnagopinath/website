@@ -34,7 +34,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-white leading-normal w-full">
+      <body className="bg-white leading-normal m-2">
         <Main>
           <Outlet />
         </Main>
