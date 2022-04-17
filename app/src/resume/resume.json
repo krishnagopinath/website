@@ -1,0 +1,193 @@
+{
+  "basics": {
+    "name": "Krishna Gopinath",
+    "label": "Software engineer and (budding) teacher",
+    "email": "hpkrishna07@gmail.com",
+    "phone": "(716) 431-9290",
+    "website": "https://krishnagopinath.me",
+    "summary": "",
+    "profiles": [
+      {
+        "network": "Stackoverflow",
+        "username": "krishgopinath",
+        "url": "https://stackoverflow.com/u/1217785"
+      },
+      {
+        "network": "GitHub",
+        "username": "krishnagopinath",
+        "url": "https://github.com/krishnagopinath"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "krishna-gopinath",
+        "url": "https://linkedin.com/in/krishgopinath/"
+      },
+      {
+        "network": "Twitter",
+        "username": "krishwader",
+        "url": "https://twitter.com/krishwader"
+      },
+      {
+        "network": "Instagram",
+        "username": "krishwader",
+        "url": "https://www.instagram.com/krishwader/"
+      }
+    ],
+    "location": {
+      "city": "New York",
+      "countryCode": "US"
+    }
+  },
+  "work": [
+    {
+      "name": "Patch Media",
+      "location": "New York",
+      "position": "Senior Software Engineer",
+      "website": "https://patch.com",
+      "startDate": "2017-03-27",
+      "endDate": "Present"
+    },
+    {
+      "name": "Pointman",
+      "location": "Buffalo, NY",
+      "position": "Senior Software Engineer",
+      "website": "https://www.linkedin.com/company/gopointman",
+      "startDate": "2017-03-27",
+      "endDate": "2020-05-30",
+      "summary": "",
+      "highlights": [
+        "Designed and built Pointman's Payment integration from scratch, which involved scoping out requirements, writing a cordova plugin to interact with Mobile Payment SDKs, writing API wrapper libraries in Node.js, .NET platforms & integrating with multiple web and cordova apps.",
+        "Improved the team's ability to rapidly deliver new product features by replacing Pointman's legacy UI build process with a fast, standardized CLI process using Node.js and webpack. This also involved writing custom codemod scripts for Pointman's codebase, with jscodeshift.",
+        "Spearheaded the migration from AngularJS to Vue.js by creating a \"Vue base\" inside the app and leading a 2-member team to migrate an existing feature. This allowed the team to iterate quickly and write bug free code.",
+        "Automated deployment processes by setting up CI/CD pipelines for Pointman's Web, Mobile and API projects using Azure DevOps, which empowered the team to build and ship features faster than ever.",
+        "Fostered a mindset of learning and collaboration by mentoring new engineers, performing in-depth code reviews and leading pair programming sessions.",
+        "Modernized Pointman's legacy application by systematically rewriting critical parts of it to be more resilient, faster & easier to maintain, resulting in a more stable user experience with reduced bugs."
+      ]
+    },
+    {
+      "name": "Argyle Technology Group",
+      "location": "Buffalo, NY",
+      "position": "Software Engineer Intern",
+      "website": "https://www.argyletechnologygroup.com/",
+      "startDate": "2016-05-15",
+      "endDate": "2016-08-30",
+      "summary": "",
+      "highlights": [
+        "Ideated and built the first version of <a href=\"https://memoryfox.io\">MemoryFox</a>, a platform for aggregating crowd-sourced social media content at events."
+      ]
+    },
+    {
+      "name": "Cognizant Technology Solutions",
+      "location": "India",
+      "position": "Software Developer",
+      "website": "https://cognizant.com",
+      "startDate": "2011-06-01",
+      "endDate": "2015-07-31",
+      "summary": "",
+      "highlights": [
+        "Architected & built a mobile app platform with infrastructure for hosting internal \"micro\" mobile web apps. Built with cordova, AngularJS, ASP.NET Web API & SQL Server, this platform was used by over 10,000 employees daily.",
+        "Designed & developed an in-memory distributed cache as a service with ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps. This service was consumed by about 60 clients and saw traffic of about 3000 unique users a day.",
+        "Conducted multi-day workshops on JavaScript, jQuery & AngularJS to train large software teams within the organization."
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University At Buffalo, SUNY",
+      "area": "Computer Science",
+      "studyType": "MS",
+      "startDate": "2015-09-01",
+      "endDate": "2017-02-01",
+      "courses": [
+        "Distributed Systems",
+        "Programming Languages"
+      ]
+    },
+    {
+      "institution": "Anna University",
+      "area": "Electrical Engineering",
+      "studyType": "BE",
+      "startDate": "2007-09-10",
+      "endDate": "2011-04-01",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Languages & Platforms",
+      "keywords": [
+        "JavaScript",
+        "Node.js",
+        "CSS/SASS",
+        "CosmosDB",
+        "SQL Server",
+        "C#",
+        ".NET Framework"
+      ]
+    },
+    {
+      "name": "Frameworks & libraries",
+      "keywords": [
+        "React.js",
+        "Vue.js",
+        "AngularJS",
+        "GatsbyJS",
+        "Cordova",
+        "Redux",
+        "VueX",
+        "Express.js",
+        "Mocha",
+        "chai.js",
+        "jest",
+        "styled-components",
+        "emotion",
+        "Entity Framework 6",
+        "ASP.NET Web API 2"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "webpack",
+        "Parcel.js",
+        "gulp",
+        "jscodeshift",
+        "git"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "keywords": [
+        "Azure DevOps",
+        "AppVeyor"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Matterwiki",
+      "description": "A simple wiki for small teams, built with Node, React and MySQL.",
+      "url": "https://github.com/Matterwiki/Matterwiki/tree/refactor"
+    },
+    {
+      "name": "cordova-plugin-ionic-migrate-storage",
+      "description": "Cordova plugin that migrates app data when Ionic's webview plugin is used.",
+      "url": "https://github.com/pointmanhq/cordova-plugin-ionic-migrate-storage"
+    }
+  ],
+  "languages": [],
+  "interests": [
+    { "name": "Open source contributions", "keywords": [] },
+    { "name": "Photography", "keywords": [] },
+    { "name": "Mentoring", "keywords": [] },
+    { "name": "Cooking", "keywords": [] }
+  ],
+  "references": [],
+  "meta": {
+    "canonical": "https://krishnagopinath.me/resume",
+    "lastModified": "June 11, 2020"
+  }
+}

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /**
+   * A simple button, extracted to reduce boilerplate
+   */
+  .primary-button {
+    @apply inline-block;
+    @apply no-underline;
+    @apply rounded;
+    @apply px-4;
+    @apply py-2;
+    @apply cursor-pointer;
+    @apply bg-primary;
+    @apply text-background;
+    @apply border;
+    @apply border-solid;
+    @apply border-primary;
+    @apply text-sm;
+    @apply hover:opacity-70
+  }
+}

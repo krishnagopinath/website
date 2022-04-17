@@ -1,68 +1,43 @@
 {
-  "name": "krishnagopinath.me",
+  "name": "remix-template-fly",
   "private": true,
-  "description": "This is the source code for krishnagopinath.me, powered by Gatsby.js.",
-  "version": "0.0.1",
-  "author": "Krishna Gopinath (@krishwader)",
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "build": "run-s build:*",
+    "build:css": "npm run generate:css -- --minify",
+    "build:remix": "remix build",
+    "dev": "run-p dev:*",
+    "dev:css": "npm run generate:css -- --watch",
+    "dev:remix": "remix dev",
+    "generate:css": "npx tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css",
+    "start": "remix-serve build"
+  },
   "dependencies": {
-    "date-fns": "^2.9.0",
-    "gatsby": "^2.23.0",
-    "gatsby-plugin-google-analytics": "^2.1.33",
-    "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-json": "^2.2.25",
-    "gatsby-transformer-remark": "^2.6.48",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-icons": "^3.8.0",
-    "theme-ui": "^0.3.1",
-    "typeface-open-sans": "0.0.75"
+    "@remix-run/node": "^1.4.0",
+    "@remix-run/react": "^1.4.0",
+    "@remix-run/serve": "^1.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.8.3",
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
-    "app-root-path": "^3.0.0",
-    "babel-preset-gatsby": "^0.2.29",
-    "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "puppeteer": "^2.0.0"
+    "@kurone-kito/jsonresume-types": "^0.2.5",
+    "@remix-run/dev": "^1.4.0",
+    "@remix-run/eslint-config": "^1.4.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "@types/tailwindcss": "^3.0.10",
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^7.1.0",
+    "eslint": "^8.11.0",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.5.5"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "rm -rf public && gatsby telemetry --disable && gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "now-build": "npm run build && mv public dist",
-    "make-pdf-resume": "node scripts/makePdfResume.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/krishnagopinath/website/"
-  },
-  "bugs": {
-    "url": "https://github.com/krishnagopinath/website/issues"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+  "engines": {
+    "node": ">=14"
   }
 }
