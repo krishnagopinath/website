@@ -6,6 +6,8 @@ import resumeData from "./resume.json";
 import { metaTagsBuilder } from "~/utils/metaTagsBuilder";
 import { Text } from "~/components/Text";
 import { Header } from "./components/Header";
+import { RowContainer } from "./components/RowContainer";
+import { WorkExperience } from "./components/WorkExperience";
 
 type LoaderData = { resumeData: ResumeSchema };
 
@@ -19,11 +21,14 @@ export default function ResumePage() {
   const { resumeData } = useLoaderData<LoaderData>();
 
   return (
-    <Text fullWidth={false}>
+    <Text fullWidth={true}>
       <div className="flex flex-col flex-wrap">
-        <div className="mb-4">
+        <RowContainer>
           <Header basics={resumeData.basics} />
-        </div>
+        </RowContainer>
+        <RowContainer>
+          <WorkExperience work={resumeData.work || []} />
+        </RowContainer>
       </div>
     </Text>
   );

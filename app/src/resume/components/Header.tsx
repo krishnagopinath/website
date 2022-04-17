@@ -7,7 +7,7 @@ const HeaderUl = ({ children }: { children: React.ReactNode }) => {
 
 const HeaderLi = ({ url, text }: { url: string; text?: string }) => {
   return (
-    <li className="max-w-4xl pb-[0.15em]">
+    <li className="max-w-4xl">
       <a
         href={url}
         className="no-underline text-primary hover:text-background hover:bg-primary"
@@ -39,7 +39,7 @@ export const Header = ({ basics }: { basics: ResumeSchema["basics"] }) => {
   return (
     <div className="flex items-center flex-wrap">
       <div>
-        <h1 className="font-normal">{name.toUpperCase()}</h1>
+        <h1 className="font-normal mb-2">{name.toUpperCase()}</h1>
       </div>
       <div className="text-sm pl-8">
         <div className="flex flex-wrap">
