@@ -29,16 +29,16 @@ export default function ResumePage() {
         <Header basics={resumeData.basics} />
       </RowContainer>
       <RowContainer>
-        <WorkExperience work={resumeData.work || []} />
+        <WorkExperience data={resumeData.work || []} />
       </RowContainer>
       <RowContainer>
-        <Projects projects={resumeData.projects || []} />
+        <Projects data={resumeData.projects || []} />
       </RowContainer>
       <RowContainer>
-        <Education education={resumeData.education || []} />
+        <Education data={resumeData.education || []} />
       </RowContainer>
       <RowContainer>
-        <Skills skills={resumeData.skills || []} />
+        <Skills data={resumeData.skills || []} />
       </RowContainer>
       <Footer lastModified={resumeData.meta?.lastModified || ''} />
     </div>

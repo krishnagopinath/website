@@ -6,8 +6,7 @@ import { SubHeading } from "./SubHeadling";
 type SkillEntries = NonNullable<ResumeSchema["skills"]>;
 type SkillEntry = ValuesType<SkillEntries>;
 
-const SkillRow = ({ skill }: { skill: SkillEntry }) => {
-  const { name, keywords } = skill;
+const SkillRow = ({ name, keywords }: SkillEntry) => {
   return (
     <ListItem>
       <strong>{name}</strong>:&nbsp;{keywords && keywords.join(", ")}
@@ -15,13 +14,13 @@ const SkillRow = ({ skill }: { skill: SkillEntry }) => {
   );
 };
 
-export const Skills = ({ skills }: { skills: SkillEntries }) => {
+export const Skills = ({ data }: { data: SkillEntries }) => {
   return (
     <>
       <SubHeading>Skills</SubHeading>
       <List>
-        {skills.map((s) => (
-          <SkillRow key={s.name} skill={s} />
+        {data.map((d) => (
+          <SkillRow key={d.name} {...d} />
         ))}
       </List>
     </>

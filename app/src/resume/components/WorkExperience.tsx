@@ -5,13 +5,18 @@ import { formatDate, Formats } from "../utils";
 import { List, ListItem } from "./List";
 import { SubHeading } from "./SubHeadling";
 
-type WorkExperiences = NonNullable<ResumeSchema["work"]>;
-type WorkExperienceEntry = ValuesType<WorkExperiences>;
+type WorkExperienceEntries = NonNullable<ResumeSchema["work"]>;
+type WorkExperienceEntry = ValuesType<WorkExperienceEntries>;
 
-const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
-  const { startDate, endDate, position, name, url, location, highlights } =
-    work;
-
+const WorkExperienceRow = ({
+  startDate,
+  endDate,
+  position,
+  name,
+  url,
+  location,
+  highlights,
+}: WorkExperienceEntry) => {
   if (!(startDate && position && name && url && location)) {
     return <></>;
   }
@@ -41,13 +46,13 @@ const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
   );
 };
 
-export const WorkExperience = ({ work }: { work: WorkExperiences }) => {
+export const WorkExperience = ({ data }: { data: WorkExperienceEntries }) => {
   return (
     <>
       <SubHeading>Experience</SubHeading>
       <List>
-        {work.map((w) => (
-          <CompanyExperience key={w.startDate} work={w} />
+        {data.map((d) => (
+          <WorkExperienceRow key={d.startDate} {...d} />
         ))}
       </List>
     </>

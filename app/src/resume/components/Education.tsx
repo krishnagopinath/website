@@ -7,10 +7,14 @@ import { SubHeading } from "./SubHeadling";
 type EducationEntries = NonNullable<ResumeSchema["education"]>;
 type EducationEntry = ValuesType<EducationEntries>;
 
-const EducationRow = ({ education }: { education: EducationEntry }) => {
-  const { area, courses, institution, startDate, endDate, studyType } =
-    education;
-
+const EducationRow = ({
+  area,
+  courses,
+  institution,
+  startDate,
+  endDate,
+  studyType,
+}: EducationEntry) => {
   // UTC Edge cases be damned! 😜
   const startDateFormatted = startDate
     ? formatDate(startDate, Formats.Year)
@@ -37,13 +41,13 @@ const EducationRow = ({ education }: { education: EducationEntry }) => {
   );
 };
 
-export const Education = ({ education }: { education: EducationEntries }) => {
+export const Education = ({ data }: { data: EducationEntries }) => {
   return (
     <>
       <SubHeading>Education</SubHeading>
       <List>
-        {education.map((p) => (
-          <EducationRow key={p.institution} education={p} />
+        {data.map((d) => (
+          <EducationRow key={d.institution} {...d} />
         ))}
       </List>
     </>

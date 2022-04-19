@@ -7,8 +7,7 @@ import { SubHeading } from "./SubHeadling";
 type ProjectEntries = NonNullable<ResumeSchema["projects"]>;
 type ProjectEntry = ValuesType<ProjectEntries>;
 
-const Project = ({ project }: { project: ProjectEntry }) => {
-  const { url, name, description } = project;
+const ProjectRow = ({ url, name, description }: ProjectEntry) => {
   if (!(url && name && description)) return <></>;
 
   return (
@@ -19,13 +18,13 @@ const Project = ({ project }: { project: ProjectEntry }) => {
   );
 };
 
-export const Projects = ({ projects }: { projects: ProjectEntries }) => {
+export const Projects = ({ data }: { data: ProjectEntries }) => {
   return (
     <>
       <SubHeading>Projects</SubHeading>
       <List>
-        {projects.map((p) => (
-          <Project key={p.name} project={p} />
+        {data.map((d) => (
+          <ProjectRow key={d.name} {...d} />
         ))}
       </List>
     </>
