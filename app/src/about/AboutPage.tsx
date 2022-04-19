@@ -6,7 +6,7 @@ export const meta: MetaFunction = () => metaTagsBuilder("Home");
 
 export default function AboutPage() {
   return (
-    <div className="prose dark:prose-invert">
+    <div className="prose">
       <About />
     </div>
   );

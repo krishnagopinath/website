@@ -24,7 +24,7 @@ export default function ResumePage() {
   const { resumeData } = useLoaderData<LoaderData>();
 
   return (
-    <div className="flex flex-col flex-wrap prose dark:prose-invert leading-tight max-w-none">
+    <div className="flex flex-col flex-wrap prose leading-tight max-w-none">
       <RowContainer>
         <Header basics={resumeData.basics} />
       </RowContainer>
