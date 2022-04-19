@@ -9,7 +9,7 @@ type Props = {
  */
 export const Main = ({ children }: Props) => {
   return (
-    <div className="flex flex-row justify-start items-start leading-normal pb-3">
+    <div className="flex flex-row justify-start items-start leading-normal pt-5 pb-3">
       <main className="px-6">{children}</main>
     </div>
   );
