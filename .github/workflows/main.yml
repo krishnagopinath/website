@@ -1,16 +1,35 @@
 
-name: Fly Deploy
+name: Build website
+
 on:
   push:
     branches:
       - master
+
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
-  deploy:
-      name: Deploy app
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy --remote-only
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+      - name: Create PDF at "files/resume.pdf"
+        uses: mujo-code/puppeteer-headful@0bc4f88
+        env:
+          CI: "true"
+          SRC_URL: "https://krishnagopinath.me/resume"
+        with:
+          args: npm run make-pdf-resume
+      - name: Commit "files/resume.pdf"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add files/resume.pdf
+          git commit -m "🤖📄 Update files/resume.pdf"
+      - name: Push changes
+        uses: ad-m/github-push-action@19caa5c
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
