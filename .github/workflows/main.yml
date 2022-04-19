@@ -28,7 +28,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add files/resume.pdf
-          git commit -m "🤖📄 Update files/resume.pdf"
+          git commit -m "🤖 chore: update files/resume.pdf"
       - name: Push changes
         uses: ad-m/github-push-action@19caa5c
         with:
