@@ -1,5 +1,11 @@
 # Krishna Gopinath's Website
 
-![Node CI](https://github.com/krishnagopinath/website/workflows/Node%20CI/badge.svg)
+![build status](https://github.com/krishnagopinath/website/workflows/Build%20website/badge.svg)
 
 This is the source code for [krishnagopinath.me](https://krishnagopinath.me), built with [Remix](remix.run), deployed to [fly.io](https://fly.io).
+
+There are some interesting things which I over-engineered while building this website:
+
+* The "about" section is sourced from the app/src/about/about.mdx file.
+* The resume page is sourced from app/src/resume/resume.json and is based on [JSON Resume's schema](https://jsonresume.org/schema/). So if the resume needs to be changed, updating this JSON file should do the trick.
+* A PDF version of this resume is automatically generated when we push to master through the Github action available in .github/workflows/main.yml. This file is then committed back to the repo and is accessible at ~/files/resume.pdf.
