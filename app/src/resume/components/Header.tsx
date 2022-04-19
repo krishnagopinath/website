@@ -1,5 +1,6 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import React from "react";
+import { ExternalLink } from "~/components/ExternalLink";
 
 const HeaderUl = ({ children }: { children: React.ReactNode }) => {
   return <ul className="list-none mx-2">{children}</ul>;
@@ -8,14 +9,7 @@ const HeaderUl = ({ children }: { children: React.ReactNode }) => {
 const HeaderLi = ({ url, text }: { url: string; text?: string }) => {
   return (
     <li className="max-w-4xl">
-      <a
-        href={url}
-        className="no-underline text-primary hover:text-background hover:bg-primary"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {text || url}
-      </a>
+      <ExternalLink href={url}>{text || url}</ExternalLink>
     </li>
   );
 };

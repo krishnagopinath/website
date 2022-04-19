@@ -1,5 +1,6 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
+import { ExternalLink } from "~/components/ExternalLink";
 import { formatDate, Formats } from "../utils";
 import { SubHeading } from "./SubHeadling";
 
@@ -20,17 +21,17 @@ const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
     : "Present";
 
   return (
-    <li className="max-w-4xl pb-2">
+    <li className="max-w-4xl pb-1">
       <strong>{position}</strong>
       &#44;&nbsp;
-      <a href={url}>{name}</a>
+      <ExternalLink href={url}>{name}</ExternalLink>
       &nbsp;&#x2014;&nbsp;
       <i>
         {startDateFormatted} - {endDateFormatted}
       </i>
       &nbsp;&#x2014;&nbsp;
       <i>{location}</i>
-      <ul>
+      <ul className="m-0">
         {(highlights || []).map((h, i) => (
           <li key={i} dangerouslySetInnerHTML={{ __html: h }} />
         ))}
@@ -41,15 +42,13 @@ const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
 
 export const WorkExperience = ({ work }: { work: WorkExperiences }) => {
   return (
-    <div>
+    <div className="prose prose-sm max-w-none text-base leading-snug">
       <SubHeading>Experience</SubHeading>
-      <div className="text-base">
-        <ul className="list-none mx-2">
-          {work.map((w) => (
-            <CompanyExperience key={w.startDate} work={w} />
-          ))}
-        </ul>
-      </div>
+      <ul className="list-none p-0">
+        {work.map((w) => (
+          <CompanyExperience key={w.startDate} work={w} />
+        ))}
+      </ul>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   FaStackOverflow,
   FaTwitter,
 } from "react-icons/fa/";
+import { ExternalLink } from "~/components/ExternalLink";
 import { basics } from "~/src/resume/resume.json";
 
 const ArrowRightIcon = () => (
@@ -21,14 +22,12 @@ export const ResumeLinks = () => {
       <Link className="primary-button" to="/resume">
         Résumé <ArrowRightIcon />
       </Link>
-      <a
+      <ExternalLink
         href="https://github.com/krishnagopinath/website/raw/master/files/resume.pdf"
-        target="_blank"
-        rel="noreferrer"
-        className="primary-button ml-3"
+        className="primary-button ml-3 text-white"
       >
         Résumé (PDF) <ArrowRightIcon />
-      </a>
+      </ExternalLink>
     </>
   );
 };
@@ -41,21 +40,18 @@ const SocialLink = ({
   networkName: string;
 }) => {
   return (
-    <a
-      className="pr-4 text-text hover:text-primary"
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {{
-        stackoverflow: <FaStackOverflow size={28} />,
-        twitter: <FaTwitter size={28} />,
-        instagram: <FaInstagram size={28} />,
-        linkedin: <FaLinkedin size={28} />,
-        github: <FaGithub size={28} />,
-        email: <FaEnvelope size={28} />,
-      }[networkName.toLocaleLowerCase()] || <FaQuestionCircle size={28} />}
-    </a>
+    <div className="pr-4">
+      <ExternalLink href={url} className="text-text hover:text-primary">
+        {{
+          stackoverflow: <FaStackOverflow size={28} />,
+          twitter: <FaTwitter size={28} />,
+          instagram: <FaInstagram size={28} />,
+          linkedin: <FaLinkedin size={28} />,
+          github: <FaGithub size={28} />,
+          email: <FaEnvelope size={28} />,
+        }[networkName.toLocaleLowerCase()] || <FaQuestionCircle size={28} />}
+      </ExternalLink>
+    </div>
   );
 };
 

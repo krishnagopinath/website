@@ -4,7 +4,6 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import resumeData from "./resume.json";
 import { metaTagsBuilder } from "~/utils/metaTagsBuilder";
-import { Text } from "~/components/Text";
 import { Header } from "./components/Header";
 import { RowContainer } from "./components/RowContainer";
 import { WorkExperience } from "./components/WorkExperience";
@@ -21,15 +20,13 @@ export default function ResumePage() {
   const { resumeData } = useLoaderData<LoaderData>();
 
   return (
-    <Text fullWidth={true}>
-      <div className="flex flex-col flex-wrap">
-        <RowContainer>
-          <Header basics={resumeData.basics} />
-        </RowContainer>
-        <RowContainer>
-          <WorkExperience work={resumeData.work || []} />
-        </RowContainer>
-      </div>
-    </Text>
+    <div className="flex flex-col flex-wrap prose dark:prose-invert max-w-none">
+      <RowContainer>
+        <Header basics={resumeData.basics} />
+      </RowContainer>
+      <RowContainer>
+        <WorkExperience work={resumeData.work || []} />
+      </RowContainer>
+    </div>
   );
 }

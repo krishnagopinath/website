@@ -21,4 +21,14 @@
     @apply text-sm;
     @apply hover:opacity-70
   }
+
+  /**
+   * Some common styles that apply to most buttons
+   */
+  .primary-link {
+    @apply no-underline;
+    @apply text-primary;
+    @apply hover:text-background;
+    @apply hover:bg-primary;
+  }
 }

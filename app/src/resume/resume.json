@@ -34,14 +34,14 @@
       }
     ],
     "location": {
-      "city": "New York",
+      "city": "New York, NY",
       "countryCode": "US"
     }
   },
   "work": [
     {
       "name": "Patch Media",
-      "location": "New York",
+      "location": "New York, NY",
       "position": "Senior Software Engineer",
       "url": "https://patch.com",
       "startDate": "2017-03-27"
@@ -72,7 +72,7 @@
       "endDate": "2016-08-30",
       "summary": "",
       "highlights": [
-        "Ideated and built the first version of <a href=\"https://memoryfox.io\">MemoryFox</a>, a platform for aggregating crowd-sourced social media content at events."
+        "Ideated and built the first version of <a class=\"primary-link\" href=\"https://memoryfox.io\">MemoryFox</a>, a platform for aggregating crowd-sourced social media content at events."
       ]
     },
     {
@@ -85,8 +85,7 @@
       "summary": "",
       "highlights": [
         "Architected & built a mobile app platform with infrastructure for hosting internal \"micro\" mobile web apps. Built with cordova, AngularJS, ASP.NET Web API & SQL Server, this platform was used by over 10,000 employees daily.",
-        "Designed & developed an in-memory distributed cache as a service with ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps. This service was consumed by about 60 clients and saw traffic of about 3000 unique users a day.",
-        "Conducted multi-day workshops on JavaScript, jQuery & AngularJS to train large software teams within the organization."
+        "Designed & developed an in-memory distributed cache as a service with ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps."
       ]
     }
   ],
