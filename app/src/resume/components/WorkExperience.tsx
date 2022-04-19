@@ -2,6 +2,7 @@ import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
 import { ExternalLink } from "~/components/ExternalLink";
 import { formatDate, Formats } from "../utils";
+import { List, ListItem } from "./List";
 import { SubHeading } from "./SubHeadling";
 
 type WorkExperiences = NonNullable<ResumeSchema["work"]>;
@@ -21,7 +22,7 @@ const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
     : "Present";
 
   return (
-    <li className="max-w-4xl pb-1">
+    <ListItem>
       <strong>{position}</strong>
       &#44;&nbsp;
       <ExternalLink href={url}>{name}</ExternalLink>
@@ -36,19 +37,19 @@ const CompanyExperience = ({ work }: { work: WorkExperienceEntry }) => {
           <li key={i} dangerouslySetInnerHTML={{ __html: h }} />
         ))}
       </ul>
-    </li>
+    </ListItem>
   );
 };
 
 export const WorkExperience = ({ work }: { work: WorkExperiences }) => {
   return (
-    <div className="prose prose-sm max-w-none text-base leading-snug">
+    <>
       <SubHeading>Experience</SubHeading>
-      <ul className="list-none p-0">
+      <List>
         {work.map((w) => (
           <CompanyExperience key={w.startDate} work={w} />
         ))}
-      </ul>
-    </div>
+      </List>
+    </>
   );
 };
