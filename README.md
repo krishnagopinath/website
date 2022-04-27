@@ -2,7 +2,7 @@
 
 ![build status](https://github.com/krishnagopinath/website/workflows/Build%20website/badge.svg)
 
-This is the source code for [krishnagopinath.me](https://krishnagopinath.me), built with [Remix](remix.run) and [tailwind.css](tailwindcss.com), deployed to [fly.io](https://fly.io).
+This is the source code for [krishnagopinath.me](https://krishnagopinath.me), built with [Remix](remix.run) and [tailwind.css](tailwindcss.com), deployed to [netlify](https://netlify.com).
 
 There are some interesting things which I over-engineered while building this website:
 
