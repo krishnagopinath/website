@@ -1,1 +1,1 @@
-export { default, loader, meta } from "~/src/resume/ResumePage";
+export { default, loader, meta } from "~/features/resume/ResumePage";

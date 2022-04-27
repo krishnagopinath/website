@@ -1,1 +1,1 @@
-export { default, meta } from "~/src/about/AboutPage";
+export { default, meta } from "~/features/about/AboutPage";

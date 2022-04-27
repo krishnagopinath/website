@@ -10,7 +10,7 @@ import {
   FaTwitter,
 } from "react-icons/fa/";
 import { ExternalLink } from "~/components/ExternalLink";
-import { basics } from "~/src/resume/resume.json";
+import { basics } from "~/features/resume/resume.json";
 
 const ArrowRightIcon = () => (
   <FaArrowRight className="align-middle inline" size={12} />
