@@ -23,7 +23,7 @@ jobs:
         env:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-      - name: Build remix bundle
+      - name: Build app bundle
         run: |
           npm run build
       - name: Deploy to Netlify
