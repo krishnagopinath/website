@@ -1,7 +1,7 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
-import { ExternalLink } from "~/components/ExternalLink";
-import { List, ListItem } from "./List";
+import { ExternalLink } from "~/components/Link";
+import { List, ListItem } from "../List";
 import { SubHeading } from "./SubHeading";
 
 type ProjectEntries = NonNullable<ResumeSchema["projects"]>;

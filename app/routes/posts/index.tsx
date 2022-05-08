@@ -1,11 +1,13 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
+import { InternalLink } from "~/components/Link";
 import { List, ListItem } from "~/components/List";
+import { formatDate, Formats } from "~/utils/dates";
+import compareDesc from "date-fns/compareDesc";
 
 // Blog imports
-import * as helloWorld from "~/routes/posts/hello-world.mdx";
-import { formatDate, Formats } from "~/utils/dates";
+import * as helloWorld from "./hello-world.mdx";
 // 👋 NOTE: Add more blog posts here
 
 const allPosts = [
@@ -19,14 +21,19 @@ type LoaderData = {
 
 export const loader: LoaderFunction = async () => {
   const activePosts = allPosts
-    .filter(({ attributes }) => !attributes?.draft)
-    .sort((p1, p2) => p1.attributes.date.localeCompare(p2.attributes.date));
+    .filter(({ attributes: { meta } }) => !meta?.draft)
+    .sort((p1, p2) => {
+      return compareDesc(
+        new Date(p1.attributes.meta.date),
+        new Date(p2.attributes.meta.date)
+      );
+    });
 
   return json<LoaderData>({
-    posts: activePosts.map(({ attributes, filename }) => ({
+    posts: activePosts.map(({ attributes: { meta }, filename }) => ({
       slug: filename.replace(".mdx", ""),
-      title: attributes.title,
-      date: formatDate(attributes.date, Formats.DayMonthYear),
+      title: meta.title,
+      date: formatDate(meta.date, Formats.DayMonthYear),
     })),
   });
 };
@@ -42,9 +49,7 @@ export default function PostsPage() {
             <span className="mr-4 italic">
               <time dateTime={date}>{date}</time>
             </span>
-            <Link className="primary-link" to={slug}>
-              {title}
-            </Link>
+            <InternalLink to={slug}>{title}</InternalLink>
           </ListItem>
         );
       })}

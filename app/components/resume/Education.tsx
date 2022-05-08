@@ -1,7 +1,7 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
 import { formatDate, Formats } from "~/utils/dates";
-import { List, ListItem } from "./List";
+import { List, ListItem } from "../List";
 import { SubHeading } from "./SubHeading";
 
 type EducationEntries = NonNullable<ResumeSchema["education"]>;

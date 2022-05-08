@@ -1,6 +1,6 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import React from "react";
-import { ExternalLink } from "~/components/ExternalLink";
+import { ExternalLink } from "~/components/Link";
 
 const HeaderUl = ({ children }: { children: React.ReactNode }) => {
   return <ul className="list-none mx-2">{children}</ul>;
