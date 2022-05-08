@@ -1,6 +1,4 @@
-import { Link } from "@remix-run/react";
 import {
-  FaArrowRight,
   FaEnvelope,
   FaGithub,
   FaInstagram,
@@ -10,27 +8,7 @@ import {
   FaTwitter,
 } from "react-icons/fa/";
 import { ExternalLink } from "~/components/ExternalLink";
-import { basics } from "~/features/resume/resume.json";
-
-const ArrowRightIcon = () => (
-  <FaArrowRight className="align-middle inline" size={12} />
-);
-
-export const ResumeLinks = () => {
-  return (
-    <>
-      <Link className="primary-button" to="/resume">
-        Résumé <ArrowRightIcon />
-      </Link>
-      <ExternalLink
-        href="https://github.com/krishnagopinath/website/raw/master/files/resume.pdf"
-        className="primary-button ml-3 text-white"
-      >
-        Résumé (PDF) <ArrowRightIcon />
-      </ExternalLink>
-    </>
-  );
-};
+import { basics } from "~/data/resume.json";
 
 const SocialLink = ({
   url,
