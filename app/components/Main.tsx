@@ -1,5 +1,5 @@
 type Props = {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 };
 
 /**
@@ -10,7 +10,7 @@ type Props = {
 export const Main = ({ children }: Props) => {
   return (
     <div className="flex flex-row justify-start items-start leading-normal pt-5 pb-3">
-      <main className="px-6">{children}</main>
+      <main className="px-6 w-full max-w-full">{children}</main>
     </div>
   );
 };

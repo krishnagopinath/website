@@ -1,6 +1,7 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
+import { List, ListItem } from "~/components/List";
 
 // Blog imports
 import * as helloWorld from "~/routes/posts/hello-world.mdx";
@@ -34,19 +35,19 @@ export default function PostsPage() {
   const { posts } = useLoaderData<LoaderData>();
 
   return (
-    <ul className="list-none p-0">
+    <List>
       {posts.map(({ date, title, slug }) => {
         return (
-          <li key={slug} className="flex">
-            <span className="mr-2 italic">
+          <ListItem key={slug}>
+            <span className="mr-4 italic">
               <time dateTime={date}>{date}</time>
             </span>
             <Link className="primary-link" to={slug}>
               {title}
             </Link>
-          </li>
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 }

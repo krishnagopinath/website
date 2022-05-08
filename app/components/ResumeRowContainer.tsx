@@ -1,4 +1,5 @@
 import React from "react";
+import { Separator } from "./Separator";
 
 /**
  * Row container for every resume single row
@@ -13,7 +14,7 @@ export const ResumeRowContainer = ({
   return (
     <div className="mb-4">
       {children}
-      <div className="border-b-separator border-solid border-b-2"></div>
+      <Separator />
     </div>
   );
 };
