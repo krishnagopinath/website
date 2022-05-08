@@ -7,7 +7,7 @@ import {
   FaStackOverflow,
   FaTwitter,
 } from "react-icons/fa/";
-import { ExternalLink } from "~/components/ExternalLink";
+import { ExternalLink } from "~/components/Link";
 import { basics } from "~/data/resume.json";
 
 const SocialLink = ({

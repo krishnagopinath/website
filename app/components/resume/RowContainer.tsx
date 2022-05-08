@@ -1,5 +1,5 @@
 import React from "react";
-import { Separator } from "./Separator";
+import { Separator } from "../Separator";
 
 /**
  * Row container for every resume single row

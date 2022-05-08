@@ -3,14 +3,13 @@ import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import resumeData from "~/data/resume.json";
-import { metaTagsBuilder } from "~/utils/metaTagsBuilder";
-import { Header } from "~/components/Header";
-import { ResumeRowContainer } from "~/components/ResumeRowContainer";
-import { WorkExperience } from "~/components/WorkExperience";
-import { Projects } from "~/components/Projects";
-import { Education } from "~/components/Education";
-import { Skills } from "~/components/Skills";
-import { Footer } from "~/components/Footer";
+import { Header } from "~/components/resume/Header";
+import { ResumeRowContainer } from "~/components/resume/RowContainer";
+import { WorkExperience } from "~/components/resume/WorkExperience";
+import { Projects } from "~/components/resume/Projects";
+import { Education } from "~/components/resume/Education";
+import { Skills } from "~/components/resume/Skills";
+import { Footer } from "~/components/resume/Footer";
 
 type LoaderData = { resumeData: ResumeSchema };
 
@@ -18,7 +17,15 @@ export const loader: LoaderFunction = async () => {
   return json<LoaderData>({ resumeData });
 };
 
-export const meta: MetaFunction = () => metaTagsBuilder("Resume");
+export const meta: MetaFunction = () => {
+  const title = `Resume | krishnagopinath.me`;
+  return {
+    title,
+    "og:title": title,
+    "twitter:title": title,
+  };
+};
+
 
 export default function ResumePage() {
   const { resumeData } = useLoaderData<LoaderData>();

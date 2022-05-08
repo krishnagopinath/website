@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,14 +6,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLocation,
 } from "@remix-run/react";
 import { Main } from "./components/Main";
 import stylesUrl from "./tailwind.css";
-
-import * as gtag from "~/utils/gtags.client";
-import { useEffect } from "react";
 import { SiteHeader } from "./components/SiteHeader";
+import { GTags } from "./components/GTags";
 
 export const links: LinksFunction = () => [
   {
@@ -32,13 +29,28 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
 ];
 
+
+export const meta: MetaFunction = () => {
+  const title = `krishnagopinath.me`
+  const description = "The website of Krishna Gopinath, software engineer, budding teacher & amateur photographer."
+  const author = "Krishna Gopinath"
+
+  return {
+    charset: "utf-8",
+    viewport: "width=device-width,initial-scale=1",
+    title,
+    "og:title": title,
+    "twitter:title": title,
+    description,
+    "og:description": description,
+    "twitter:description": description,
+    "og:type": "website",
+    "twitter:card": "summary",
+    "twitter:creator": author,
+  }
+}
+
 export default function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    gtag.pageview(location.pathname);
-  }, [location]);
-
   return (
     <html lang="en">
       <head>
@@ -46,29 +58,7 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-white leading-normal m-2">
-        {process.env.NODE_ENV === "development" ? null : (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-            />
-            <script
-              async
-              id="gtag-init"
-              dangerouslySetInnerHTML={{
-                __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gtag.GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `,
-              }}
-            />
-          </>
-        )}
-
+        {process.env.NODE_ENV === "development" ? null : <GTags />}
         <Main>
           <SiteHeader />
           <Outlet />

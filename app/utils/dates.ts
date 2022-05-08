@@ -12,5 +12,5 @@ export const formatDate = (dateString: string, dateFormat: Formats) => format(ne
 export enum Formats {
   Year = "uuuu",
   MonthAndYear = "MMM uuuu",
-  DayMonthYear = "d, MMM uuuu"
+  DayMonthYear = "d MMM, uuuu"
 }
