@@ -13,6 +13,7 @@ import stylesUrl from "./tailwind.css";
 
 import * as gtag from "~/utils/gtags.client";
 import { useEffect } from "react";
+import { SiteHeader } from "./components/SiteHeader";
 
 export const links: LinksFunction = () => [
   {
@@ -69,6 +70,7 @@ export default function App() {
         )}
 
         <Main>
+          <SiteHeader />
           <Outlet />
         </Main>
         <ScrollRestoration />

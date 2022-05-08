@@ -1,9 +1,9 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
 import { ExternalLink } from "~/components/ExternalLink";
-import { formatDate, Formats } from "../utils";
+import { formatDate, Formats } from "~/utils/dates";
 import { List, ListItem } from "./List";
-import { SubHeading } from "./SubHeadling";
+import { SubHeading } from "./SubHeading";
 
 type WorkExperienceEntries = NonNullable<ResumeSchema["work"]>;
 type WorkExperienceEntry = ValuesType<WorkExperienceEntries>;

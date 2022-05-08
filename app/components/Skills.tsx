@@ -1,7 +1,7 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import type { ValuesType } from "utility-types";
 import { List, ListItem } from "./List";
-import { SubHeading } from "./SubHeadling";
+import { SubHeading } from "./SubHeading";
 
 type SkillEntries = NonNullable<ResumeSchema["skills"]>;
 type SkillEntry = ValuesType<SkillEntries>;

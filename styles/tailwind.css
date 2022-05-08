@@ -30,5 +30,6 @@
     @apply text-primary;
     @apply hover:text-background;
     @apply hover:bg-primary;
+    @apply font-normal;
   }
 }
