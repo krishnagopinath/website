@@ -13,7 +13,7 @@ This website uses `mdx` files whenever possible. Since [Remix has great mdx supp
 * There is a minimal blogging setup in this website, which uses `mdx`. 
   - Posts are added to `app/routes/posts/` as `mdx` files.
   - If the post is still in draft stage, `draft: true` is added to the metadata of the file. 
-  - Once it's moved out of `draft`, it is considered "published", at which point, it is listed in the [blogs page](https://krishnagopinath.me/posts).
+  - Once it's moved out of `draft`, it is considered "published", at which point, it is listed in the [posts page](https://krishnagopinath.me/posts).
 
 
 ### Resume builder using JSONResume
