@@ -1,11 +1,11 @@
 import React from "react";
 
 /**
- * Row container for every single row
+ * Row container for every resume single row
  * @param param0 
  * @returns 
  */
-export const RowContainer = ({
+export const ResumeRowContainer = ({
   children,
 }: {
   children: React.ReactNode;

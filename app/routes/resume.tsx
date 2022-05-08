@@ -5,7 +5,7 @@ import { useLoaderData } from "@remix-run/react";
 import resumeData from "~/data/resume.json";
 import { metaTagsBuilder } from "~/utils/metaTagsBuilder";
 import { Header } from "~/components/Header";
-import { RowContainer } from "~/components/RowContainer";
+import { ResumeRowContainer } from "~/components/ResumeRowContainer";
 import { WorkExperience } from "~/components/WorkExperience";
 import { Projects } from "~/components/Projects";
 import { Education } from "~/components/Education";
@@ -25,21 +25,21 @@ export default function ResumePage() {
 
   return (
     <div className="flex flex-col flex-wrap prose leading-tight max-w-none">
-      <RowContainer>
+      <ResumeRowContainer>
         <Header basics={resumeData.basics} />
-      </RowContainer>
-      <RowContainer>
+      </ResumeRowContainer>
+      <ResumeRowContainer>
         <WorkExperience data={resumeData.work || []} />
-      </RowContainer>
-      <RowContainer>
+      </ResumeRowContainer>
+      <ResumeRowContainer>
         <Projects data={resumeData.projects || []} />
-      </RowContainer>
-      <RowContainer>
+      </ResumeRowContainer>
+      <ResumeRowContainer>
         <Education data={resumeData.education || []} />
-      </RowContainer>
-      <RowContainer>
+      </ResumeRowContainer>
+      <ResumeRowContainer>
         <Skills data={resumeData.skills || []} />
-      </RowContainer>
+      </ResumeRowContainer>
       <Footer lastModified={resumeData.meta?.lastModified || ''} />
     </div>
   );
