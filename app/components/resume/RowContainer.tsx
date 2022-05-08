@@ -6,7 +6,7 @@ import { Separator } from "../Separator";
  * @param param0 
  * @returns 
  */
-export const ResumeRowContainer = ({
+export const RowContainer = ({
   children,
 }: {
   children: React.ReactNode;
