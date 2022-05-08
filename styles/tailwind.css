@@ -12,5 +12,6 @@
     @apply hover:text-background;
     @apply hover:bg-primary;
     @apply font-normal;
+    @apply px-0.5;
   }
 }
