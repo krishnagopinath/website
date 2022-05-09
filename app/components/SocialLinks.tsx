@@ -18,7 +18,13 @@ const SocialLink = ({
   networkName: string;
 }) => {
   return (
-    <ExternalLink href={url} className="text-text hover:text-primary">
+    <ExternalLink
+      href={url}
+      // Overriding some of the classes that are applied in this component because the style 
+      // is mildy different here.
+      // We want the link functionality, but we want it to be styled differently.
+      className="text-text hover:text-primary hover:bg-background"
+    >
       {{
         stackoverflow: <FaStackOverflow size={28} />,
         twitter: <FaTwitter size={28} />,
