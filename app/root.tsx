@@ -9,7 +9,6 @@ import {
 } from "@remix-run/react";
 import { Main } from "./components/Main";
 import stylesUrl from "./tailwind.css";
-import { SiteHeader } from "./components/SiteHeader";
 import { GTags } from "./components/GTags";
 
 export const links: LinksFunction = () => [
@@ -60,7 +59,6 @@ export default function App() {
       <body className="bg-white leading-normal m-2">
         {process.env.NODE_ENV === "development" ? null : <GTags />}
         <Main>
-          <SiteHeader />
           <Outlet />
         </Main>
         <ScrollRestoration />

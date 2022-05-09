@@ -3,7 +3,7 @@ import { Separator } from "./Separator";
 
 export const SiteHeader = () => {
   return (
-    <div className="prose mb-3 w-full max-w-full print:hidden">
+    <div className="prose mb-3 w-full max-w-full">
       <h2 className="mb-2">Hello, I'm Krishna 🧑🏽‍💻</h2>
       <p className="my-3">
         <InternalLink className="mr-4" to="/">

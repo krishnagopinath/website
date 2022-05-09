@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
+import { SiteHeader } from "~/components/SiteHeader";
 
 export const meta: MetaFunction = () => {
   const title = `Writing | krishnagopinath.me`;
@@ -12,10 +13,13 @@ export const meta: MetaFunction = () => {
 
 export default function PostsPage() {
   return (
-    <div className="flex flex-col flex-wrap">
-      <div className="prose">
-        <Outlet />
+    <>
+      <SiteHeader />
+      <div className="flex flex-col flex-wrap">
+        <div className="prose">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

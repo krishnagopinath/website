@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { SiteHeader } from "~/components/SiteHeader";
 import About from "~/data/about.mdx";
 
 export const meta: MetaFunction = () => {
@@ -12,8 +13,11 @@ export const meta: MetaFunction = () => {
 
 export default function AboutPage() {
   return (
-    <div className="prose">
-      <About />
-    </div>
+    <>
+      <SiteHeader />
+      <div className="prose">
+        <About />
+      </div>
+    </>
   );
 }
