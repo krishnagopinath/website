@@ -10,7 +10,7 @@ export const SiteHeader = () => {
         <InternalLink to="/posts">Writing</InternalLink>
         <InternalLink target="_blank" to="/resume">Résumé</InternalLink>
         <ExternalLink href="https://github.com/krishnagopinath/website/raw/master/files/resume.pdf">
-          Résumé (PDF)
+          PDF Résumé
         </ExternalLink>
       </div>
       <Separator />

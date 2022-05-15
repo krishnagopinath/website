@@ -24,6 +24,7 @@ const SocialLink = ({
       // is mildy different here.
       // We want the link functionality, but we want it to be styled differently.
       className="text-text hover:text-primary hover:bg-background"
+      showNewTabIcon={false}
     >
       {{
         stackoverflow: <FaStackOverflow size={28} />,
