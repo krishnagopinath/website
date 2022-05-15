@@ -8,7 +8,7 @@ export const SiteHeader = () => {
       <div className="my-3 flex gap-4">
         <InternalLink to="/">About</InternalLink>
         <InternalLink to="/posts">Writing</InternalLink>
-        <InternalLink to="/resume">Résumé</InternalLink>
+        <InternalLink target="_blank" to="/resume">Résumé</InternalLink>
         <ExternalLink href="https://github.com/krishnagopinath/website/raw/master/files/resume.pdf">
           Résumé (PDF)
         </ExternalLink>
