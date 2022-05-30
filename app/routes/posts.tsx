@@ -14,9 +14,9 @@ export const meta: MetaFunction = () => {
 export default function PostsPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader hideHeader={true} />
       <div className="flex flex-col flex-wrap">
-        <div className="prose">
+        <div className="prose max-w-fit">
           <Outlet />
         </div>
       </div>
