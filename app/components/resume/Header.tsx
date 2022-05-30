@@ -17,8 +17,7 @@ const HeaderLi = ({ url, text }: { url: string; text?: string }) => {
 export const Header = ({ basics }: { basics: ResumeSchema["basics"] }) => {
   if (!basics) return <></>;
 
-  const { name, email, phone, url, profiles } = basics;
-  if (!(name && email && phone && url && profiles)) return <></>;
+  const { name, email, url, profiles } = basics;
 
   // Get just the professional profiles.. no IG!
   const professionalProfileLinks = (profiles || [])
@@ -33,18 +32,17 @@ export const Header = ({ basics }: { basics: ResumeSchema["basics"] }) => {
   return (
     <div className="flex items-center flex-wrap">
       <div>
-        <h1 className="font-normal mb-2">{name.toUpperCase()}</h1>
+        {name && <h1 className="font-normal mb-2">{name.toUpperCase()}</h1>}
       </div>
       <div className="text-sm pl-8">
         <div className="flex flex-wrap">
           <HeaderUl>
-            <HeaderLi url={url} />
+            {url && <HeaderLi url={url} />}
             <HeaderLi url={`mailto:${email}`} text={email} />
-            <HeaderLi url={`tel:${phone}`} text={phone} />
           </HeaderUl>
           <HeaderUl>
-            {professionalProfileLinks.map((url) => (
-              <HeaderLi key={url} url={url} />
+            {professionalProfileLinks.map((link) => (
+              <HeaderLi key={link} url={link} />
             ))}
           </HeaderUl>
         </div>
