@@ -16,7 +16,7 @@ export default function PostsPage() {
     <>
       <SiteHeader hideHeader={true} />
       <div className="flex flex-col flex-wrap">
-        <div className="prose">
+        <div className="prose max-w-fit">
           <Outlet />
         </div>
       </div>
