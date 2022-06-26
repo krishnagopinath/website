@@ -43,7 +43,12 @@
       "location": "New York, NY",
       "position": "Senior Software Engineer",
       "url": "https://patch.com",
-      "startDate": "2020-06-15"
+      "startDate": "2020-06-15",
+      "highlights": [
+        "Build features and improvements for the patch CMS and website that have a meaningful impact on how our editors & users use our product",
+        "Act as a technical lead, mentor peers and ensure institutional knowledge is disseminated correctly",
+        "Define a future for migrating legacy systems to a more scalable and efficient system that will help Patch scale in the future"
+      ]
     },
     {
       "name": "Pointman",
@@ -83,8 +88,7 @@
       "endDate": "2015-07-31",
       "summary": "",
       "highlights": [
-        "Architected & built a mobile app platform with infrastructure for hosting internal \"micro\" mobile web apps. Built with cordova, AngularJS, ASP.NET Web API & SQL Server, this platform was used by over 10,000 employees daily.",
-        "Designed & developed an in-memory distributed cache as a service with ASP.NET Web API 2, for quickly sharing organization information, as part of a web platform that hosted internal apps."
+        "Architected & built a mobile app platform with infrastructure for hosting internal \"micro\" mobile web apps. Built with cordova, AngularJS, ASP.NET Web API & SQL Server, this platform was used by over 10,000 employees daily."
       ]
     }
   ],
@@ -150,16 +154,16 @@
       "keywords": [
         "webpack",
         "Parcel.js",
-        "gulp",
-        "jscodeshift",
-        "git"
+        "jscodeshift"
       ]
     },
     {
       "name": "CI/CD",
       "keywords": [
         "Azure DevOps",
-        "AppVeyor"
+        "AppVeyor",
+        "CircleCI",
+        "GitHub Actions"
       ]
     }
   ],
@@ -177,14 +181,26 @@
   ],
   "languages": [],
   "interests": [
-    { "name": "Open source contributions", "keywords": [] },
-    { "name": "Photography", "keywords": [] },
-    { "name": "Mentoring", "keywords": [] },
-    { "name": "Cooking", "keywords": [] }
+    {
+      "name": "Open source contributions",
+      "keywords": []
+    },
+    {
+      "name": "Photography",
+      "keywords": []
+    },
+    {
+      "name": "Mentoring",
+      "keywords": []
+    },
+    {
+      "name": "Cooking",
+      "keywords": []
+    }
   ],
   "references": [],
   "meta": {
     "canonical": "https://krishnagopinath.me/resume",
-    "lastModified": "April 18, 2022"
+    "lastModified": "Jun 26, 2022"
   }
 }

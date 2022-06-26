@@ -23,6 +23,7 @@ const EducationRow = ({
     ? formatDate(endDate, Formats.Year)
     : "Present";
 
+  console.log(endDate, endDateFormatted)
   return (
     <ListItem>
       <strong>
