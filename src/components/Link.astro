@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon";
+
+export interface Props extends HTMLAttributes<"a"> {
+  // Override for when we want to open to a new tab but not show icon
+  dontShowIcon?: boolean;
+}
+
+const {
+  dontShowIcon = false,
+  class: className = "",
+  ...linkProps
+} = Astro.props;
+
+const showIcon = linkProps.target === "_blank" && dontShowIcon !== true;
+---
+
+<a {...linkProps} class={`primary-link ${className}`}>
+  <slot />
+  {
+    showIcon && (
+      <>
+        {" "}
+        <Icon name="fa:external-link" class="inline print:hidden" size="15" />
+      </>
+    )
+  }
+</a>

@@ -1,0 +1,31 @@
+---
+import Link from "./Link.astro";
+import Separator from "./Separator.astro";
+
+interface Props {
+  /**
+   * If true, hides the full header at the top of the web page.
+   *
+   * Defaults to `false`
+   */
+  hideHeader?: boolean;
+}
+
+const { hideHeader = false } = Astro.props;
+---
+
+<div class="prose mb-3 w-full max-w-full">
+  {!hideHeader && <h2 class="mb-2">Hello, I'm Krishna 🧑🏽‍💻</h2>}
+  <div class:list={[hideHeader ? "mb-3" : "my-3", `flex`, `gap-4`]}>
+    <Link href="/">About</Link>
+    <Link href="/posts">Writing</Link>
+    <Link href="/resume" target="_blank">Résumé</Link>
+    <Link
+      href="https://github.com/krishnagopinath/website/raw/master/files/resume.pdf"
+      target="_blank"
+    >
+      PDF Résumé
+    </Link>
+  </div>
+  <Separator />
+</div>
