@@ -1,0 +1,61 @@
+
+name: Build website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+        env:
+          CI: true
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+
+      - name: Build app bundle
+        run: npm run build
+
+      - name: Deploy to Netlify
+        run: npm run deploy
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Create PDF at "files/resume.pdf"
+        uses: mujo-code/puppeteer-headful@v2
+        env:
+          CI: "true"
+          SRC_URL: "https://krishnagopinath.me/resume"
+        with:
+          args: npm run make-pdf-resume
+
+      - name: Commit "files/resume.pdf"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add files/resume.pdf
+          git commit -m "🤖 chore: update files/resume.pdf"
+          
+      - name: Push PDF
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
