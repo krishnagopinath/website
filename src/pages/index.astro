@@ -1,9 +1,11 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
 import { Content as About } from "../content/about.mdx";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout pageName="Home" showSiteHeader>
+<BaseLayout pageName="Home">
+  <SiteHeader />
   <div class="prose">
     <About />
   </div>

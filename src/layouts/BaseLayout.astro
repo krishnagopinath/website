@@ -3,14 +3,12 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import "../base.css";
 
 import Main from "../components/Main.astro";
-import SiteHeader from "../components/SiteHeader.astro";
 
 interface Props {
   pageName: string;
-  showSiteHeader: boolean;
 }
 
-const { pageName, showSiteHeader } = Astro.props;
+const { pageName } = Astro.props;
 
 const website = `krishnagopinath.me`;
 
@@ -42,7 +40,6 @@ const author = "Krishna Gopinath";
   <body class="bg-white leading-normal m-2">
     <Main>
       <!-- TODO: Add Google tag manager on import.meta.env.PROD -->
-      {showSiteHeader ? <SiteHeader />: <></>}
       <slot />
     </Main>
   </body>
