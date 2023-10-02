@@ -1,4 +1,6 @@
-import format from "date-fns/format"
+// 🤔 Fixing the following error: 
+//     Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/node_modules/date-fns/format' is not supported resolving ES modules imported from **
+import format from "date-fns/format/index.js"
 
 /**
  * Given a date and a supported date format, formats the date
