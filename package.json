@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "netlify deploy --prod",
-    "make-pdf-resume": "node --loader ts-node/esm ./scripts/makePdfResume.ts"
+    "make-pdf-resume": "npx tsx ./scripts/makePdfResume.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.0",
@@ -20,13 +20,13 @@
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^0.8.1",
     "date-fns": "^2.30.0",
-    "puppeteer": "^21.3.6",
-    "tailwindcss": "^3.3.3",
-    "ts-node": "^10.9.1"
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@kurone-kito/jsonresume-types": "^0.4.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.8.0"
+    "@types/node": "^20.8.0",
+    "puppeteer": "^21.3.6",
+    "tsx": "^3.13.0"
   }
 }
