@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "netlify deploy --prod",
-    "make-pdf-resume": "node scripts/makePdfResume.mjs"
+    "make-pdf-resume": "node scripts/makePdfResume.cjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.0",

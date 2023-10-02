@@ -8,10 +8,10 @@
  * ```
  */
 
-import path from "node:path";
-import fs from "node:fs";
-import puppeteer from "puppeteer";
-import appRoot from "app-root-path";
+const path = require("node:path");
+const fs = require("node:fs");
+const puppeteer = require("puppeteer");
+const appRoot = require("app-root-path");
 
 /**
  * Throws error and exits
