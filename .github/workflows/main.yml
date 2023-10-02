@@ -45,7 +45,9 @@ jobs:
           CI: "true"
           SRC_URL: "https://krishnagopinath.me/resume"
         with:
-          args: node -v && npm -v && npm run make-pdf-resume
+          args: |
+            npm install
+            npm run make-pdf-resume
 
       - name: Commit "files/resume.pdf"
         run: |

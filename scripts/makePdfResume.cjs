@@ -8,8 +8,8 @@
  * ```
  */
 
-const path = require("node:path");
-const fs = require("node:fs");
+const path = require("path");
+const fs = require("fs");
 const puppeteer = require("puppeteer");
 const appRoot = require("app-root-path");
 
