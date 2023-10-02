@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "netlify deploy --prod",
-    "make-pdf-resume": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/makePdfResume.ts"
+    "make-pdf-resume": "node --loader ts-node/esm ./scripts/makePdfResume.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.0",
