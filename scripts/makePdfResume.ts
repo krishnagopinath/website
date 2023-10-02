@@ -1,15 +1,10 @@
 /**
- * Generates a pdf file based on the /resume page. Accepts the following args:
- * - `--srcUrl` (REQUIRED) - Source URL to print
+ * Generates a pdf file based on the /resume page. 
  *
- * @example
+ * Usage:
  *
  * ```
- * # Using npm run script
  * SRC_URL=http://localhost:9000/resume npm run make-pdf-resume
- *
- * # Running script directly
- * SRC_URL=http://localhost:9000/resume node scripts/makePdfResume
  * ```
  */
 
@@ -87,7 +82,7 @@ fs.unlink(pdfPath, async (err) => {
     await page.pdf({
       path: pdfPath,
       format: "Letter",
-      scale: 0.79,
+      scale: 0.76,
       margin: { top: 0.10, right: 0, bottom: 0, left: 0 },
     });
 

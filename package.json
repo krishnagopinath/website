@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "netlify deploy --prod",
-    "make-pdf-resume": "node scripts/makePdfResume.js"
+    "make-pdf-resume": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/makePdfResume.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.0",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@kurone-kito/jsonresume-types": "^0.4.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.8.0"
+    "@types/node": "^20.8.0",
+    "ts-node": "^10.9.1"
   }
 }
