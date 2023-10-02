@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+import Link from "./Link.astro";
+import { basics } from "../content/resume.json";
+
+const { profiles, email } = basics;
+
+const iconList: Record<string, string> = {
+  stackoverflow: "ion:logo-stackoverflow",
+  twitter: "icon-park-outline:big-x",
+  instagram: "icomoon-free:instagram",
+  linkedin: "entypo-social:linkedin",
+  github: "codicon:github",
+  email: "mdi:email-edit",
+};
+
+const linkList = [
+  {
+    networkName: "email",
+    url: `mailto:${email}`,
+    icon: iconList.email,
+    size: "30",
+  },
+  ...profiles.map((p) => ({
+    ...p,
+    icon: iconList[p.network.toLocaleLowerCase()],
+    size: "28",
+  })),
+];
+---
+
+<div class="flex gap-4">
+  {
+    linkList.map((l) => (
+      <Link
+        href={l.url}
+        target="_blank"
+        dontShowIcon={true}
+        class="text-text hover:text-primary hover:bg-background"
+      >
+        <Icon name={l.icon} size={l.size} />
+      </Link>
+    ))
+  }
+</div>

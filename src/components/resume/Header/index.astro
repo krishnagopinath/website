@@ -1,0 +1,38 @@
+---
+import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import HeaderLi from "./HeaderLi.astro";
+interface Props {
+  basics: NonNullable<ResumeSchema["basics"]>;
+}
+
+const { basics } = Astro.props;
+
+const { name, email, url, profiles } = {
+  // 🤔 Need to spread this out so the types don't freak out
+  ...basics,
+};
+
+const professionalProfileLinks = (profiles || [])
+  .filter(({ network = "" }) => {
+    const isSocial = ["twitter", "instagram"].includes(network.toLowerCase());
+    return !isSocial;
+  })
+  .map((p) => p.url || "");
+---
+
+<div class="flex items-center flex-wrap">
+  <div>
+    {name && <h1 class="font-normal mb-2">{name.toUpperCase()}</h1>}
+  </div>
+  <div class="text-sm pl-8">
+    <div class="flex flex-wrap">
+      <ul class="list-none mx-2 my-0">
+        {url && <HeaderLi {url} />}
+        <HeaderLi url={`mailto:${email}`} text={email} />
+      </ul>
+      <ul class="list-none mx-2 my-0">
+        {professionalProfileLinks.map((url) => <HeaderLi {url} />)}
+      </ul>
+    </div>
+  </div>
+</div>

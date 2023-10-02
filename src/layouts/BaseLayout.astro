@@ -1,0 +1,46 @@
+---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import "../base.css";
+
+import Main from "../components/Main.astro";
+
+interface Props {
+  pageName: string;
+}
+
+const { pageName } = Astro.props;
+
+const website = `krishnagopinath.me`;
+
+const title = `${pageName} | ${website}`;
+
+const description =
+  "The website of Krishna Gopinath, software engineer, budding teacher & amateur photographer.";
+const author = "Krishna Gopinath";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>{title}</title>
+    <meta content={title} property="og:title" />
+    <meta content={title} name="twitter:title" />
+    <meta content={description} name="description" />
+    <meta content={description} property="og:description" />
+    <meta content={description} name="twitter:description" />
+    <meta content="website" property="og:type" />
+    <meta content="summary" name="twitter:card" />
+    <meta content={author} name="twitter:creator" />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
+    />
+  </head>
+
+  <body class="bg-white leading-normal m-2">
+    <Main>
+      <!-- TODO: Add Google tag manager on import.meta.env.PROD -->
+      <slot />
+    </Main>
+  </body>
+</html>

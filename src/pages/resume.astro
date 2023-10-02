@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RowContainer from "../components/resume/RowContainer.astro";
+import Header from "../components/resume/Header/index.astro";
+
+import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+
+import resumeDataJson from "../content/resume.json";
+import WorkExperience from "../components/resume/WorkExperience.astro";
+import Projects from "../components/resume/Projects.astro";
+import Education from "../components/resume/Education.astro";
+import Skills from "../components/resume/Skills.astro";
+
+const { basics, work, projects, education, skills, meta }: ResumeSchema =
+  resumeDataJson;
+---
+
+<BaseLayout pageName="Resume">
+  <div class="flex flex-col flex-wrap prose leading-tight max-w-none">
+    <RowContainer>
+      {basics && <Header {basics} />}
+    </RowContainer>
+    <RowContainer>
+      <WorkExperience data={work || []} />
+    </RowContainer>
+    <RowContainer>
+      <Projects data={projects || []} />
+    </RowContainer>
+    <RowContainer>
+      <Education data={education || []} />
+    </RowContainer>
+    <RowContainer>
+      <Skills data={skills || []} />
+    </RowContainer>
+    <div class="italic text-xs text-muted float-right">
+      Last Updated on {meta?.lastModified}
+    </div>
+  </div>
+</BaseLayout>

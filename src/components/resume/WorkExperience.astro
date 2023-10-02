@@ -1,0 +1,58 @@
+---
+import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { formatDate, Formats } from "../../utils/dates";
+import Link from "../Link.astro";
+
+interface Props {
+  data: NonNullable<ResumeSchema["work"]>;
+}
+
+const { data } = Astro.props;
+
+// Do some extra work on the data
+const workXpFormatted = data.map((w) => ({
+  ...w,
+
+  ...(w.startDate
+    ? { startDateFormatted: formatDate(w.startDate, Formats.MonthAndYear) }
+    : {}),
+  ...(w.endDate
+    ? { endDateFormatted: formatDate(w.endDate, Formats.MonthAndYear) }
+    : {}),
+}));
+---
+
+<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Experience</h2>
+<ul class="list-none p-0">
+  {
+    workXpFormatted.map(
+      ({
+        position,
+        url,
+        name,
+        startDateFormatted,
+        endDateFormatted,
+        location,
+        highlights,
+      }) => (
+        <li class="max-w-4xl">
+          <strong>{position}</strong>&#44;
+          <Link href={url} target="_blank">
+            {name}
+          </Link>
+          &nbsp;&#x2014;&nbsp;
+          <i>
+            {startDateFormatted} - {endDateFormatted || "Present"}
+          </i>
+          &nbsp;&#x2014;&nbsp;
+          <i>{location}</i>
+          <ul class="m-0">
+            {(highlights || []).map((h) => (
+              <li set:html={h} />
+            ))}
+          </ul>
+        </li>
+      )
+    )
+  }
+</ul>

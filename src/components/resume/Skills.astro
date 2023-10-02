@@ -1,0 +1,20 @@
+---
+import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+
+interface Props {
+  data: NonNullable<ResumeSchema["skills"]>;
+}
+
+const { data } = Astro.props;
+---
+
+<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Skills</h2>
+<ul class="list-none p-0">
+  {
+    data.map(({ name, keywords = [] }) => (
+      <li class="max-w-4xl">
+        <strong>{name}</strong>:&nbsp;{keywords.join(", ")}
+      </li>
+    ))
+  }
+</ul>
