@@ -7,10 +7,6 @@ interface Props {
 
 const { data } = Astro.props;
 
-console.log("endDateFormatted", {
-  endDateFormatted: formatDate("2011-04-01", Formats.Year),
-});
-
 const educationFormatted = data.map((d) => ({
   ...d,
   ...(d.startDate

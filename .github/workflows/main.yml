@@ -40,7 +40,7 @@ jobs:
         timeout-minutes: 1
 
       - name: Create PDF at "files/resume.pdf"
-        uses: mujo-code/puppeteer-headful@v2
+        uses: mujo-code/puppeteer-headful@16.6.0
         env:
           CI: "true"
           SRC_URL: "https://krishnagopinath.me/resume"
