@@ -1,5 +1,5 @@
 /**
- * Generates a pdf file based on the /resume page. 
+ * Generates a pdf file based on the /resume page.
  *
  * Usage:
  *
@@ -17,7 +17,7 @@ import appRoot from "app-root-path";
  * Throws error and exits
  * @param {any} err
  */
-const throwAndExit = (err: Error) => {
+const throwAndExit = (err) => {
   console.error(err);
   process.exit(1);
 };
@@ -34,7 +34,7 @@ const parseEnvVars = () => ({
  * Simple sleep fn that could be `await`ed
  * @param {number} delayMs
  */
-const sleep = (delayMs: number) =>
+const sleep = (delayMs) =>
   new Promise((resolve, reject) => setTimeout(resolve, delayMs));
 
 const { srcUrl, execPathOrName } = parseEnvVars();
