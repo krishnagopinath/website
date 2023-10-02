@@ -1,0 +1,50 @@
+---
+import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { Formats, formatDate } from "../../utils/dates";
+interface Props {
+  data: NonNullable<ResumeSchema["education"]>;
+}
+
+const { data } = Astro.props;
+
+const educationFormatted = data.map((d) => ({
+  ...d,
+  ...(d.startDate
+    ? { startDateFormatted: formatDate(d.startDate, Formats.Year) }
+    : {}),
+  ...(d.endDate
+    ? { endDateFormatted: formatDate(d.endDate, Formats.Year) }
+    : {}),
+}));
+---
+
+<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Education</h2>
+<ul class="list-none p-0">
+  {
+    educationFormatted.map(
+      ({
+        studyType,
+        area,
+        institution,
+        startDateFormatted,
+        endDateFormatted,
+        courses,
+      }) => (
+        <li class="max-w-4xl">
+          <strong>
+            {studyType}, {area}, {institution}
+          </strong>
+          &nbsp;&#x2014;&nbsp;
+          <i>
+            {startDateFormatted || "Unknown"} - {endDateFormatted || "Present"}
+          </i>
+          {courses?.length && (
+            <div>
+              <i>Relevant Courses:&nbsp;{courses.join(", ")}</i>
+            </div>
+          )}
+        </li>
+      )
+    )
+  }
+</ul>

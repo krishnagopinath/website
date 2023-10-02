@@ -1,0 +1,12 @@
+---
+import Link from "../../Link.astro";
+
+interface Props {
+  url: string;
+  text?: string;
+}
+
+const { url, text } = Astro.props;
+---
+
+<li class="max-w-4xl"><Link target="_blank" href={url}>{text || url}</Link></li>
