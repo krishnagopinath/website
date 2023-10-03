@@ -40,14 +40,12 @@ jobs:
         timeout-minutes: 2
 
       - name: Create PDF at "files/resume.pdf"
-        uses: mujo-code/puppeteer-headful@16.6.0
+        uses: mujo-code/puppeteer-headful@18.9.0
         env:
           CI: "true"
           SRC_URL: "https://krishnagopinath.me/resume"
         with:
-          args: |
-            npm install
-            npm run make-pdf-resume
+          args: npm run make-pdf-resume
 
       - name: Commit "files/resume.pdf"
         run: |
