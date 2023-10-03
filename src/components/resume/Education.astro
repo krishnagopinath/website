@@ -1,6 +1,9 @@
 ---
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import { Formats, formatDate } from "../../utils/dates";
+import Subheader from "./Subheader.astro";
+import ListItem from "./ListItem.astro";
+import List from "./List.astro";
 interface Props {
   data: NonNullable<ResumeSchema["education"]>;
 }
@@ -18,8 +21,8 @@ const educationFormatted = data.map((d) => ({
 }));
 ---
 
-<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Education</h2>
-<ul class="list-none p-0">
+<Subheader>Education</Subheader>
+<List>
   {
     educationFormatted.map(
       ({
@@ -30,7 +33,7 @@ const educationFormatted = data.map((d) => ({
         endDateFormatted,
         courses,
       }) => (
-        <li class="max-w-4xl">
+        <ListItem>
           <strong>
             {studyType}, {area}, {institution}
           </strong>
@@ -43,8 +46,8 @@ const educationFormatted = data.map((d) => ({
               <i>Relevant Courses:&nbsp;{courses.join(", ")}</i>
             </div>
           ): <></>}
-        </li>
+        </ListItem>
       )
     )
   }
-</ul>
+</List>

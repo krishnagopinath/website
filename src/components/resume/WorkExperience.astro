@@ -2,6 +2,9 @@
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import { formatDate, Formats } from "../../utils/dates";
 import Link from "../Link.astro";
+import Subheader from "./Subheader.astro";
+import ListItem from "./ListItem.astro";
+import List from "./List.astro";
 
 interface Props {
   data: NonNullable<ResumeSchema["work"]>;
@@ -22,8 +25,8 @@ const workXpFormatted = data.map((w) => ({
 }));
 ---
 
-<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Experience</h2>
-<ul class="list-none p-0">
+<Subheader>Experience</Subheader>
+<List>
   {
     workXpFormatted.map(
       ({
@@ -35,7 +38,7 @@ const workXpFormatted = data.map((w) => ({
         location,
         highlights,
       }) => (
-        <li class="max-w-4xl">
+        <ListItem>
           <strong>{position}</strong>&#44;
           <Link href={url} target="_blank">
             {name}
@@ -51,8 +54,8 @@ const workXpFormatted = data.map((w) => ({
               <li set:html={h} />
             ))}
           </ul>
-        </li>
+        </ListItem>
       )
     )
   }
-</ul>
+</List>

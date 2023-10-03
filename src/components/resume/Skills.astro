@@ -1,5 +1,8 @@
 ---
 import type { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import Subheader from "./Subheader.astro";
+import ListItem from "./ListItem.astro";
+import List from "./List.astro";
 
 interface Props {
   data: NonNullable<ResumeSchema["skills"]>;
@@ -8,13 +11,13 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<h2 class="text-gray-500 text-2xl font-normal uppercase m-0">Skills</h2>
-<ul class="list-none p-0">
+<Subheader>Skills</Subheader>
+<List>
   {
     data.map(({ name, keywords = [] }) => (
-      <li class="max-w-4xl">
+      <ListItem>
         <strong>{name}</strong>:&nbsp;{keywords.join(", ")}
-      </li>
+      </ListItem>
     ))
   }
-</ul>
+</List>
