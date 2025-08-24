@@ -1,1 +1,3 @@
-media: files/media
+media:
+  input: src/media
+  output: files/media
