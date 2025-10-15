@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal website for Krishna Gopinath ([krishnagopinath.me](https://krishnagopinath.me)), built with Astro and Tailwind CSS, deployed to Netlify. The site uses server-side rendering with the Netlify adapter.
+Personal website for Krishna Gopinath ([krigo.me](https://krigo.me)), built with Astro and Tailwind CSS, deployed to Netlify. The site uses server-side rendering with the Netlify adapter.
 
 ## Development Commands
 

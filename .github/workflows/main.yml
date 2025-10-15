@@ -43,7 +43,7 @@ jobs:
         uses: mujo-code/puppeteer-headful@18.9.0
         env:
           CI: "true"
-          SRC_URL: "https://krishnagopinath.me/resume"
+          SRC_URL: "https://krigo.me/resume"
         with:
           args: npm run make-pdf-resume
       - name: Commit "files/resume.pdf"
