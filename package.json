@@ -12,10 +12,10 @@
     "make-pdf-resume": "node scripts/makePdfResume.cjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.0",
-    "@astrojs/netlify": "^3.0.2",
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.1.4",
+    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/netlify": "^6.5.13",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.14.5",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^0.8.1",
     "date-fns": "^2.30.0",
