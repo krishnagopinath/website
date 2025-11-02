@@ -1,11 +1,9 @@
-// 🤔 Fixing the following error: 
-//     Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/node_modules/date-fns/format' is not supported resolving ES modules imported from **
-import format from "date-fns/format/index.js"
+import dayjs from "dayjs"
 
 /**
  * Given a date and a supported date format, formats the date
  */
-export const formatDate = (dateString: string, dateFormat: Formats) => format(new Date(dateString), dateFormat)
+export const formatDate = (dateString: string, dateFormat: Formats) => dayjs(new Date(dateString)).format(dateFormat)
 
 /**
  * Enum for 'supported' date formats
