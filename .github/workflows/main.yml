@@ -1,4 +1,4 @@
-name: Build website
+name: Build Resume PDF
 
 on:
   push:
@@ -6,15 +6,15 @@ on:
       - master
 
 jobs:
-  build:
+  build-resume-pdf:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 20
+      - name: Use Node.js 24
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          node-version: 24.x
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -28,15 +28,6 @@ jobs:
         env:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-
-      - name: Build app bundle
-        run: npm run build
-
-      - name: Build & Deploy Worker
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Create PDF at "files/resume.pdf"
         uses: mujo-code/puppeteer-headful@18.9.0
