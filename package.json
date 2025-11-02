@@ -7,8 +7,7 @@
     "start": "astro dev --port 9000",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "make-pdf-resume": "node scripts/makePdfResume.cjs"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
@@ -24,8 +23,6 @@
     "@kurone-kito/jsonresume-types": "^0.4.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^24",
-    "app-root-path": "^3.1.0",
-    "puppeteer": "^21.3.6",
     "wrangler": "^4.45.3"
   },
   "packageManager": "pnpm@10.20.0"

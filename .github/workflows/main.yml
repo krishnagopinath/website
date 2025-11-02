@@ -44,25 +44,12 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      # - name: Install Chromium dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y chromium-browser
-
-      # - name: Create PDF at "files/resume.pdf"
-      #   run: pnpm run make-pdf-resume
-      #   env:
-      #     CI: "true"
-      #     SRC_URL: "https://krigo.me/resume"
-      #     PUPPETEER_EXEC_PATH: /usr/bin/chromium-browser
-
       - name: html to pdf
         uses: misaelnieto/web_to_pdf_action@master
         with:
           webPageURL: https://krigo.me/resume
           outputFile: files/resume.pdf
           usePuppeteer: true
-          useScreen: true
           pdfOptions: '{"format": "Letter", "scale": 0.76, "margin": {"top": 0.1, "left": 0, "right": 0, "bottom": 0}}'      
 
       - name: Commit "files/resume.pdf"
