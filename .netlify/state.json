@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Chicago",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "IL",
+				"name": "Illinois"
+			},
+			"timezone": "America/Chicago",
+			"latitude": 41.9703,
+			"longitude": -87.664,
+			"postalCode": "60640"
+		},
+		"timestamp": 1762112269051
+	}
+}

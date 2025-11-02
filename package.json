@@ -8,7 +8,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "netlify deploy --prod",
     "make-pdf-resume": "node scripts/makePdfResume.cjs"
   },
   "dependencies": {
@@ -28,5 +27,6 @@
     "app-root-path": "^3.1.0",
     "puppeteer": "^21.3.6",
     "wrangler": "^4.45.3"
-  }
+  },
+  "packageManager": "pnpm@10.20.0"
 }

@@ -1,8 +1,8 @@
 # Krishna Gopinath's Website
 
-![build status](https://github.com/krishnagopinath/website/workflows/Build%20website/badge.svg) ![Netlify Status](https://api.netlify.com/api/v1/badges/347a004f-2bed-4554-b61d-84b63557936f/deploy-status)
+![build status](https://github.com/krishnagopinath/website/workflows/Build%20website/badge.svg)
 
-This is the source code for [krigo.me](https://krigo.me), built with [Astro](https://astro.dev) and [tailwind.css](https://tailwindcss.com), deployed to [netlify](https://netlify.com).
+This is the source code for [krigo.me](https://krigo.me), built with [Astro](https://astro.dev) and [tailwind.css](https://tailwindcss.com), deployed to [Cloudflare](https://cloudflare.com).
 
 There are some interesting things that I've done while building this website. I may have gone a little overboard, but it was fun.
 

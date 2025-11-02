@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal website for Krishna Gopinath ([krigo.me](https://krigo.me)), built with Astro and Tailwind CSS, deployed to Netlify. The site uses server-side rendering with the Netlify adapter.
+Personal website for Krishna Gopinath ([krigo.me](https://krigo.me)), built with Astro and Tailwind CSS, deployed to Cloudflare. The site uses server-side rendering with the Cloudflare adapter.
 
 ## Development Commands
 
@@ -20,7 +20,7 @@ npm run build
 # Preview production build
 npm run preview
 
-# Deploy to Netlify
+# Deploy to Cloudflare
 npm run deploy
 
 # Generate PDF resume from resume page
@@ -58,23 +58,22 @@ The resume is managed through a JSON Resume schema workflow:
 
 ### Configuration
 
-- **Astro config** ([astro.config.mjs](astro.config.mjs)): Server-side rendering with Netlify adapter, Tailwind integration with custom base styles disabled, MDX support
+- **Astro config** ([astro.config.mjs](astro.config.mjs)): Server-side rendering with Cloudflare adapter, Tailwind integration with custom base styles disabled, MDX support
 - **Tailwind** ([tailwind.config.cjs](tailwind.config.cjs)): Custom configuration for styling
-- **Netlify** ([netlify.toml](netlify.toml)): Build command and publish directory
-- **Pages CMS** ([.pages.yml](.pages.yml)): Media management configuration
+- **Cloudflare** ([wrangler.jsonc](wrangler.json)): Build command and publish directory
 
 ## CI/CD Workflow
 
 GitHub Actions workflow on push to master:
 1. Install dependencies with `npm ci --ignore-scripts`
 2. Build with `npm run build`
-3. Deploy to Netlify with `npm run deploy`
+3. Deploy to Cloudflare using `cloudflare/wrangler-action`
 4. Generate PDF resume using Puppeteer headful action
 5. Commit `files/resume.pdf` back to repository
 
 ## Key Dependencies
 
-- **Framework**: Astro 3.x with MDX and Netlify adapters
+- **Framework**: Astro 5.x with MDX and Cloudflare adapters
 - **Styling**: Tailwind CSS with typography plugin
 - **Type Safety**: TypeScript with JSON Resume types
 - **PDF Generation**: Puppeteer (used in CI only)
