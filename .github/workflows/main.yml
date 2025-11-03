@@ -44,6 +44,10 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
+      - name: Sleep for 30 seconds to let the worker deploy
+        run: sleep 30s
+        shell: bash          
+
       - name: html to pdf
         uses: misaelnieto/web_to_pdf_action@master
         with:
