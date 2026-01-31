@@ -9,7 +9,7 @@ export const formatDate = (dateString: string, dateFormat: Formats) => dayjs(new
  * Enum for 'supported' date formats
  */
 export enum Formats {
-  Year = "uuuu",
-  MonthAndYear = "MMM uuuu",
-  DayMonthYear = "d MMM, uuuu"
+  Year = "YYYY",
+  MonthAndYear = "MMM YYYY",
+  DayMonthYear = "D MMM, YYYY"
 }
