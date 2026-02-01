@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
-    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/mdx": "^4.3.13",
     "@iconify-json/ion": "^1.2.6",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.15.3",
+    "astro": "^5.17.1",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^1.1.5",
     "dayjs": "^1.11.19",
