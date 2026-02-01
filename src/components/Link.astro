@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 export interface Props extends HTMLAttributes<"a"> {
   // Override for when we want to open to a new tab but not show icon
@@ -22,7 +22,7 @@ const showIcon = linkProps.target === "_blank" && dontShowIcon !== true;
     showIcon && (
       <>
         {" "}
-        <Icon name="fa:external-link" class="inline print:hidden" size="15" />
+        <Icon name="ion:open-outline" class="inline print:hidden" size="15" />
       </>
     )
   }

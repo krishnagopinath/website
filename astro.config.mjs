@@ -1,17 +1,14 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
 
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    mdx(),
-  ],
+  integrations: [mdx(), icon()],
+  vite: { plugins: [tailwindcss()], },
   output: "server",
   adapter: cloudflare(),
 });

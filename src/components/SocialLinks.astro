@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import Link from "./Link.astro";
 import { basics } from "../content/resume.json";
 
@@ -7,11 +7,11 @@ const { profiles, email } = basics;
 
 const iconList: Record<string, string> = {
   stackoverflow: "ion:logo-stackoverflow",
-  twitter: "icon-park-outline:big-x",
-  instagram: "icomoon-free:instagram",
-  linkedin: "entypo-social:linkedin",
-  github: "codicon:github",
-  email: "mdi:email-edit",
+  twitter: "ion:logo-twitter",
+  instagram: "ion:logo-instagram",
+  linkedin: "ion:logo-linkedin",
+  github: "ion:logo-github",
+  email: "ion:mail-outline",
 };
 
 const linkList = [
